@@ -50,6 +50,15 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok-maven -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok-maven</artifactId>
+            <version>1.18.6.0</version>
+            <type>pom</type>
+        </dependency>
+
     </dependencies>
 
     <build>
