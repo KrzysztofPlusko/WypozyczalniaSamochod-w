@@ -1,7 +1,7 @@
 package com.sda.carsharing.model.entities;
 
 import com.sda.carsharing.model.enums.*;
-import com.sun.corba.se.impl.encoding.CodeSetConversion;
+
 
 import lombok.Getter;
 import lombok.Setter;
