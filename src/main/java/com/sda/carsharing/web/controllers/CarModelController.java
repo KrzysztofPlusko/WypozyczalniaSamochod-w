@@ -11,7 +11,7 @@ import javax.validation.Valid;
 
 @Controller
 @RequestMapping(value = "/admin/carmodel")
-public class CarModelController {
+public class                    CarModelController {
     private CarModelService carModelService;
 
     @Autowired
