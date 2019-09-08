@@ -10,8 +10,6 @@ public class CarModelMapper {
         carModel.setMark(carModelDto.getMark());
         carModel.setModel(carModelDto.getModel());
         carModel.setBodyType(carModelDto.getBodyType());
-        carModel.setProductionDate(carModelDto.getProductionDate());
-        carModel.setColor(carModelDto.getColor());
         carModel.setGear(carModelDto.getGear());
         carModel.setFuel(carModelDto.getFuel());
         carModel.setAirCondition(carModelDto.isAirCondition());
