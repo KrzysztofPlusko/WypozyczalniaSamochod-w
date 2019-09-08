@@ -9,9 +9,10 @@ import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "clients")
+
 @Getter
 @Setter
-public class Client {
+public class Client extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,4 +33,6 @@ public class Client {
     @Column(name = "adres", updatable = false, nullable = false)
     private String adres;
 
-}
+
+    }
+
