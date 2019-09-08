@@ -1,6 +1,9 @@
 package com.sda.carsharing.model.entities;
 
-import com.sda.carsharing.model.enums.*;
+import com.sda.carsharing.model.enums.BodyType;
+import com.sda.carsharing.model.enums.CarClass;
+import com.sda.carsharing.model.enums.Fuel;
+import com.sda.carsharing.model.enums.Gear;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -29,13 +32,6 @@ public class CarModel extends BaseEntity {
     @NotBlank
     private BodyType bodyType;
 
-    @Column(name="production_date")
-    @NotBlank
-    private int productionDate;
-
-    @NotBlank
-    private Color color;
-
     @NotBlank
     private Gear gear;
 
@@ -56,8 +52,6 @@ public class CarModel extends BaseEntity {
                 ", mark='" + mark + '\'' +
                 ", model='" + model + '\'' +
                 ", bodyType=" + bodyType +
-                ", productionDate=" + productionDate +
-                ", color=" + color +
                 ", gear=" + gear +
                 ", fuel=" + fuel +
                 ", airCondition=" + airCondition +

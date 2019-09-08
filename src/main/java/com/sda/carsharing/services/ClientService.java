@@ -14,12 +14,18 @@ public class ClientService {
     @Autowired
     public ClientService(ClientRepository clientRepository) { this.clientRepository = clientRepository; }
 
-    @Transactional
-    public void createClient()
-
-    @Transactional
-    public Client save(Client client) {return this.clientRepository.save(client); }
-
-
+//    @Transactional(readOnly = false)
+//    public void createUser(ClientDto userDto){
+//        User user = toEntity(userDto);
+//        this.addressService.save(user.getAddress());
+//        this.userRepository.save(user);
+//    }
+//
+//
+//
+//    @Transactional(readOnly = true)
+//    public User getById(Long id) {
+//        return userRepository.getOne(id);
+//    }
 
 }
