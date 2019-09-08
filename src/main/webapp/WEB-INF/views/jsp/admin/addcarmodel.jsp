@@ -18,15 +18,19 @@
         </div>
         <div class="form-group">
             <form:label path="carClass">Klasa</form:label>
-            <form:input class="form-control" path="carClass" required="true"/>
+            <form:select path="carClass" items="${carClasses}" />
         </div>
         <div class="form-group">
-            <form:label path="bodyType">Skrzynia biegów</form:label>
-            <form:input class="form-control" path="bodyType" required="true"/>
+            <form:label path="bodyType">Typ nadwozia</form:label>
+            <form:select path="bodyType" items="${bodyType}" />
+        </div>
+        <div class="form-group">
+            <form:label path="gear">Skrzynia biegów</form:label>
+            <form:select path="gear" items="${gearType}" />
         </div>
         <div class="form-group">
             <form:label path="fuel">Rodzaj Paliwa</form:label>
-            <form:input class="form-control" path="fuel" required="true"/>
+            <form:select path="fuel" items="${fuels}"/>
         </div>
         <div class="form-group">
             <form:label path="airCondition">Klimatyzacja <form:checkbox class="form-control" path="airCondition" />

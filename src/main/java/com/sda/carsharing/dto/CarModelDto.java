@@ -12,10 +12,8 @@ import java.math.BigDecimal;
 @Data
 public class CarModelDto {
 
-    @NotBlank
     private Long id;
 
-    @NotBlank
     private CarClass carClass;
 
     @NotBlank
@@ -24,18 +22,13 @@ public class CarModelDto {
     @NotBlank
     private String model;
 
-    @NotBlank
     private BodyType bodyType;
 
-    @NotBlank
     private Gear gear;
 
-    @NotBlank
     private Fuel fuel;
 
-    @NotBlank
     private boolean airCondition;
 
-    @NotBlank
     private BigDecimal price;
 }

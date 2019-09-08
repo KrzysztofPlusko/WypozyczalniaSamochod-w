@@ -27,7 +27,7 @@ public class CarModelController {
         return "admin/showcarmodellist";
     }
 
-    @RequestMapping(value = "admin/addcarmodel", method = RequestMethod.GET)
+    @RequestMapping(value = "admin/carmodel/add", method = RequestMethod.GET)
     public String addCarModelViev(Model model){
         model.addAttribute("carModelDto", new CarModelDto());
         return "admin/addcarmodel";
