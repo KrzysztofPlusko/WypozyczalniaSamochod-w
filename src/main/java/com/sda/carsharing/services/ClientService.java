@@ -1,7 +1,7 @@
 package com.sda.carsharing.services;
 
 import com.sda.carsharing.model.entities.Client;
-import com.sda.carsharing.model.repositories.entities.ClientRepository;
+import com.sda.carsharing.model.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,6 +13,9 @@ public class ClientService {
 
     @Autowired
     public ClientService(ClientRepository clientRepository) { this.clientRepository = clientRepository; }
+
+    @Transactional
+    public void createClient()
 
     @Transactional
     public Client save(Client client) {return this.clientRepository.save(client); }
