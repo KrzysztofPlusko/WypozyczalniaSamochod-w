@@ -10,6 +10,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "clients")
+
 @Getter
 @Setter
 public class Client extends BaseEntity {
@@ -34,4 +35,6 @@ public class Client extends BaseEntity {
     private String address;
 
 
-}
+
+    }
+
