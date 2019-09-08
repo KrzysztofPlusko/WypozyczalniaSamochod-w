@@ -7,6 +7,8 @@ import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
@@ -16,24 +18,37 @@ import java.time.LocalDate;
 public class Reservation extends BaseEntity{
 
     @Column(name = "date_of_reservation")
+    @NotBlank
     private LocalDate dateOfReservation;
+
     @Column(name = "starting_date")
+    @NotBlank
     private LocalDate startingDate;
+
     @Column(name = "end_date")
+    @NotBlank
     private LocalDate endDate;
+
     @Column(name = "reservation_branch")
-    private LocalDate reservationBranch;
+    @NotBlank
+    private Long reservationBranch;
+
     @Column(name = "return_branch")
-    private LocalDate returnBranch;
-    private double price;
+    @NotBlank
+    private Long returnBranch;
+
+    @NotBlank
+    private BigDecimal price;
+
     @OneToOne
     @JoinColumn(name = "car_id", nullable = false)
-    @NonNull
-    private int carId;
+    @NotBlank
+    private Long carId;
+
     @OneToOne
     @JoinColumn(name = "client_id", nullable = false)
-    @NonNull
-    private int clientId;
+    @NotBlank
+    private Long clientId;
     @Override
     public String toString() {
         return "Reservation{" +
