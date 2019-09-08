@@ -19,7 +19,6 @@ import java.math.BigDecimal;
 public class CarModel extends BaseEntity {
 
     @Column(name = "car_class")
-    @NotBlank
     private CarClass carClass;
 
     @NotBlank
@@ -29,20 +28,15 @@ public class CarModel extends BaseEntity {
     private String model;
 
     @Column(name = "body_type")
-    @NotBlank
     private BodyType bodyType;
 
-    @NotBlank
     private Gear gear;
 
-    @NotBlank
     private Fuel fuel;
 
     @Column(name="air_condition")
-    @NotBlank
     private boolean airCondition;
 
-    @NotBlank
     private BigDecimal price;
 
     @Override
