@@ -5,36 +5,41 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "clients")
 
 @Getter
 @Setter
-public class Client extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
+public class Client extends BaseEntity {
 
 
 
     @NotBlank
     @Column(name = "first_name", updatable = false, nullable = false)
-    private String firstName;
+    private String first_name;
 
     @NotBlank
     @Column(name = "last_name", updatable = false, nullable = false)
-    private String lastName;
+    private String last_name;
+
+    @Email
     @NotBlank
     @Column(name = "email", updatable = false, nullable = false)
     private String email;
+
     @NotBlank
-    @Column(name = "address", updatable = false, nullable = false)
-    private String address;
+    @Column(name = "adres", updatable = false, nullable = false)
+    private String adres;
 
 
-
+    @Override
+    public String toString() {
+        return super.toString();
     }
+}
 

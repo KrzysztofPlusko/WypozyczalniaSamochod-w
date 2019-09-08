@@ -1,41 +1,41 @@
 package com.sda.carsharing.dto;
 
-import com.sda.carsharing.model.enums.*;
+import com.sda.carsharing.model.enums.BodyType;
+import com.sda.carsharing.model.enums.CarClass;
+import com.sda.carsharing.model.enums.Fuel;
+import com.sda.carsharing.model.enums.Gear;
 import lombok.Data;
 
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotBlank;
 import java.math.BigDecimal;
 
 @Data
 public class CarModelDto {
 
-    @NotEmpty
+    @NotBlank
+    private Long id;
+
+    @NotBlank
     private CarClass carClass;
 
-    @NotEmpty
+    @NotBlank
     private String mark;
 
-    @NotEmpty
+    @NotBlank
     private String model;
 
-    @NotEmpty
+    @NotBlank
     private BodyType bodyType;
 
-    @NotEmpty
-    private int productionDate;
-
-    @NotEmpty
-    private Color color;
-
-    @NotEmpty
+    @NotBlank
     private Gear gear;
 
-    @NotEmpty
+    @NotBlank
     private Fuel fuel;
 
-    @NotEmpty
+    @NotBlank
     private boolean airCondition;
 
-    @NotEmpty
+    @NotBlank
     private BigDecimal price;
 }
