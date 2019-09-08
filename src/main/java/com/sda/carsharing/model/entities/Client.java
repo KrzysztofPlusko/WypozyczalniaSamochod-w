@@ -17,7 +17,7 @@ public class Client extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", updatable = false, nullable = false)
-    private int id;
+    private Long id;
 
     @NotBlank
     @Column(name = "first_name", updatable = false, nullable = false)

@@ -12,29 +12,26 @@
     <table class="table table-striped">
         <tr>
             <th>Id</th>
-            <th>Material</th>
-            <th>Color</th>
-            <th>Size</th>
-            <th>Graphic</th>
-            <th>Sign</th>
+            <th>Marka</th>
+            <th>Model</th>
+            <th>Typ nadwozia</th>
+            <th>Skrzynia biegów</th>
+            <th>Paliwo</th>
+            <th>Klimatyzacja</th>
             <th>Action</th>
         </tr>
-        <c:forEach items="${shirts}" var="shirt">
+        <c:forEach items="${carmodels}" var="carmodel">
             <tr>
-                <td>${shirt.id}</td>
-                <td>${shirt.material}</td>
-                <td>${shirt.color}</td>
-                <td>${shirt.size}</td>
-                <td>${shirt.graphic}</td>
-                <td>${shirt.sign}</td>
+                <td>${carmodel.id}</td>
+                <td>${carmodel.mark}</td>
+                <td>${carmodel.model}</td>
+                <td>${carmodel.bodyType}</td>
+                <td>${carmodel.gear}</td>
+                <td>${carmodel.fuel}</td>
+                <td>${carmodel.airCondition}</td>
+                <td>${carmodel.price}</td>
                 <td>
-                    <form action="/deleteShirt" method="post" onclick="return
-                            confirm('Are you sure you want to delete user?');">
-                        <input hidden name="id" value="${shirt.id}">
-                        <button>
-                            DELETE
-                        </button>
-                    </form></td>
+                    Edytuj / Usuń</td>
             </tr>
         </c:forEach>
     </table>
