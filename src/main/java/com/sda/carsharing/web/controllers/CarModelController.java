@@ -3,6 +3,7 @@ package com.sda.carsharing.web.controllers;
 import com.sda.carsharing.services.CarModelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -16,8 +17,9 @@ public class CarModelController {
     }
 
     @RequestMapping(value = "/carmodel", method = RequestMethod.GET)
-    public String showAll(){
+    public String showAll(Model model) {
 
-        return "show"
+        model.addAttribute("carmodels", carModelService.findAll());
+        return "showcarmodellist";
     }
 }
