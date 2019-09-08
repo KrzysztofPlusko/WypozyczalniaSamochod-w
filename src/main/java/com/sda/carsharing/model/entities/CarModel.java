@@ -15,9 +15,8 @@ import java.util.Objects;
 @Entity
 @Table(name = "car_models")
 @Getter @Setter
-public class CarModel {
-    @Id
-    private int id;
+public class CarModel extends BaseEntity{
+
     private CarClass carClass;
     private String mark;
     private String model;
@@ -32,8 +31,7 @@ public class CarModel {
     @Override
     public String toString() {
         return "CarModel{" +
-                "id=" + id +
-                ", carClass=" + carClass +
+                "carClass=" + carClass +
                 ", mark='" + mark + '\'' +
                 ", model='" + model + '\'' +
                 ", bodyType=" + bodyType +
@@ -43,19 +41,6 @@ public class CarModel {
                 ", fule=" + fule +
                 ", airCondition=" + airCondition +
                 ", price=" + price +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CarModel carModel = (CarModel) o;
-        return id == carModel.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
+                "} " + super.toString();
     }
 }
