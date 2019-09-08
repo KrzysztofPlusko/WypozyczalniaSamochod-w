@@ -1,6 +1,9 @@
 package com.sda.carsharing.dto;
 
-import com.sda.carsharing.model.enums.*;
+import com.sda.carsharing.model.enums.BodyType;
+import com.sda.carsharing.model.enums.CarClass;
+import com.sda.carsharing.model.enums.Fuel;
+import com.sda.carsharing.model.enums.Gear;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
@@ -23,12 +26,6 @@ public class CarModelDto {
 
     @NotBlank
     private BodyType bodyType;
-
-    @NotBlank
-    private int productionDate;
-
-    @NotBlank
-    private Color color;
 
     @NotBlank
     private Gear gear;
