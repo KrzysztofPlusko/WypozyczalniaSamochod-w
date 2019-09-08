@@ -16,10 +16,10 @@ public class CarModelController {
         this.carModelService = carModelService;
     }
 
-    @RequestMapping(value = "/carmodel", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/carmodel", method = RequestMethod.GET)
     public String showAll(Model model) {
 
         model.addAttribute("carmodels", carModelService.findAll());
-        return "showcarmodellist";
+        return "admin/showcarmodellist";
     }
 }
