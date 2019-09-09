@@ -23,14 +23,14 @@ public class CarModelController {
     @GetMapping
     public String showAllView(Model model) {
         model.addAttribute("carmodels", carModelService.findAll());
-        return "admin/showcarmodellist";
+        return "admin/car-model-list";
     }
 
     //widok dodania nowego medelu do bazy
     @GetMapping(value = "add")
     public String addCarModelViev(Model model){
         model.addAttribute("carModelDto", new CarModelDto());
-        return "admin/addcarmodel";
+        return "admin/car-model-form";
     }
 
     //logika dodania nowego modelu auta do bazy
@@ -45,7 +45,7 @@ public class CarModelController {
         }
 
         model.addAttribute("carmodels", carModelService.findAll());
-        return "admin/showcarmodellist";
+        return "admin/car-model-list";
     }
 
     @PostMapping(value = "del")
@@ -53,12 +53,12 @@ public class CarModelController {
         this.carModelService.deleteCarModelById(id);
         model.addAttribute("msg", "Model auta usunięty");
         model.addAttribute("carmodels", carModelService.findAll());
-        return "admin/showcarmodellist";
+        return "admin/car-model-list";
     }
 
     @PostMapping(value = "edit")
     public String editCarModel(@RequestParam(required = true) Long id, Model model){
         model.addAttribute("carModelDto", carModelService.findById(id));
-        return "admin/addcarmodel";
+        return "admin/car-model-form";
     }
 }

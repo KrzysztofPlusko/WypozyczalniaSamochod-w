@@ -44,7 +44,7 @@
             <form:label path="price">Cena</form:label>
             <form:input class="form-control" path="price" required="true"/>
         </div>
-        <form:button class="btn btn-primary" type="submit" value="Submit">Dodaj model auta</form:button>
+        <form:button class="btn btn-primary" type="submit" value="Submit">Wykonaj</form:button>
     </form:form>
 </div>
 </body>

@@ -34,11 +34,15 @@
                         <form id="form-del" action="/admin/carmodel/del" method="post"
                               onclick="return confirm('Czy na pewno usunć?');">
                             <input hidden name="id" value="${carmodel.id}">
-                            <div class="float-left"><button class="fas fa-trash-alt"/></div>
+                            <div class="float-left"><button alt="Usuń model" class="fas fa-trash-alt"/></div>
                         </form>
                         <form action="/admin/carmodel/edit" method="post">
                             <input hidden name="id" value="${carmodel.id}">
-                            <div class="float-left"><button class="fas fa-edit"/></div>
+                            <div class="float-left"><button alt="Edytuj model" class="fas fa-edit"/></div>
+                        </form>
+                        <form action="/admin/car/add" method="post">
+                            <input hidden name="car-model-id" value="${carmodel.id}">
+                            <div class="float-left"><button alt="Dodaj pojazd z modelu" class="far fa-plus-square"/></div>
                         </form>
                     </div>
 
