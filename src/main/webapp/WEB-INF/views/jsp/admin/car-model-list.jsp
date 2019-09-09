@@ -41,7 +41,7 @@
                             <div class="float-left"><button alt="Edytuj model" class="fas fa-edit"/></div>
                         </form>
                         <form action="/admin/car/add" method="post">
-                            <input hidden name="car-model-id" value="${carmodel.id}">
+                            <input hidden name="id" value="${carmodel.id}">
                             <div class="float-left"><button alt="Dodaj pojazd z modelu" class="far fa-plus-square"/></div>
                         </form>
                     </div>
