@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<!DOCTYPE html>
 <html>
 <head>
     <%@ include file="../header.jsp" %>
@@ -30,13 +30,19 @@
                 <td>${carmodel.airCondition}</td>
                 <td>${carmodel.price}</td>
                 <td>
-                    <form action="/admin/carmodel/del" method="post" onclick="return;
-                            confirm('Czy na pewno usunć?');">
-                        <input hidden name="id" value="${carmodel.id}">
-                        <button>
-                            Usuń
-                        </button>
-                    </form></td>
+                    <div id="action-buttons-group" class="position-relative">
+                        <form id="form-del" action="/admin/carmodel/del" method="post"
+                              onclick="return confirm('Czy na pewno usunć?');">
+                            <input hidden name="id" value="${carmodel.id}">
+                            <div class="float-left"><button class="fas fa-trash-alt"/></div>
+                        </form>
+                        <form action="/admin/carmodel/edit" method="post">
+                            <input hidden name="id" value="${carmodel.id}">
+                            <div class="float-left"><button class="fas fa-edit"/></div>
+                        </form>
+                    </div>
+
+                </td>
             </tr>
         </c:forEach>
     </table>

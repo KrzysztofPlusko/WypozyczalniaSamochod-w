@@ -32,4 +32,8 @@ public class CarModelService {
     public void deleteCarModelById(Long id) {
         carModelRepository.deleteById(id);
     }
+
+    public CarModel findById(Long id) {
+        return carModelRepository.findById(id).get();
+    }
 }
