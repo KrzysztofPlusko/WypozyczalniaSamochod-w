@@ -7,6 +7,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "cars")
@@ -14,7 +16,7 @@ import javax.validation.constraints.NotBlank;
 public class Car extends BaseEntity {
 
 
-    @NotBlank
+    @NotNull
     @ManyToOne
     private CarModel carModel;
 
@@ -23,7 +25,6 @@ public class Car extends BaseEntity {
     private String plateNumber;
 
     @Column(name = "production_date")
-    @NotBlank
     private Integer productionDate;
 
     @Column
