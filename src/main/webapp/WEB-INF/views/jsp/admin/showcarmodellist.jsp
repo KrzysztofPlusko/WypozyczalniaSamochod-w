@@ -30,13 +30,11 @@
                 <td>${carmodel.airCondition}</td>
                 <td>${carmodel.price}</td>
                 <td>
-                    <form action="/admin/carmodel/del" method="post" onclick="return;
-                            confirm('Czy na pewno usunć?');">
+                    <form action="/admin/carmodel/del" method="post" onclick="return confirm('Czy na pewno usunć?');">
                         <input hidden name="id" value="${carmodel.id}">
-                        <button>
-                            Usuń
-                        </button>
-                    </form></td>
+                        <button>Usuń</button>
+                    </form>
+                </td>
             </tr>
         </c:forEach>
     </table>
