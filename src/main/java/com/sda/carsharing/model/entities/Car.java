@@ -13,10 +13,9 @@ import javax.validation.constraints.NotBlank;
 @Getter @Setter
 public class Car extends BaseEntity {
 
-    @Column(name = "car_model_id")
+
     @NotBlank
     @ManyToOne
-    @JoinColumn(name = "id")
     private CarModel carModel;
 
     @Column(name = "plate_number")
