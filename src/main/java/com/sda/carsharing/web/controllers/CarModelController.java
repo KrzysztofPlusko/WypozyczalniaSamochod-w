@@ -23,25 +23,29 @@ public class                    CarModelController {
     @GetMapping
     public String showAllView(Model model) {
         model.addAttribute("carmodels", carModelService.findAll());
-        return "admin/showcarmodellist";
+        return "admin/car-model-list";
     }
 
-    //widok dla dodania nowego medelu do bazy
+    //widok dodania nowego medelu do bazy
     @GetMapping(value = "add")
     public String addCarModelViev(Model model){
         model.addAttribute("carModelDto", new CarModelDto());
-        return "admin/addcarmodel";
+        return "admin/car-model-form";
     }
 
     //logika dodania nowego modelu auta do bazy
     @PostMapping
-    public String addCarModel(@Valid @ModelAttribute("carModelDto") CarModelDto carModelDto, Model model) {
+    public String saveCarModel(@Valid @ModelAttribute("carModelDto") CarModelDto carModelDto, Model model) {
 
         this.carModelService.addCarModel(carModelDto);
+        if (carModelDto.getId() == null){
+            model.addAttribute("msg", "Model auta dodany");
+        }else{
+            model.addAttribute("msg", "Model auta zaktualizowany");
+        }
 
-        model.addAttribute("msg", "Model auta dodany");
         model.addAttribute("carmodels", carModelService.findAll());
-        return "admin/showcarmodellist";
+        return "admin/car-model-list";
     }
 
     @PostMapping(value = "del")
@@ -49,6 +53,12 @@ public class                    CarModelController {
         this.carModelService.deleteCarModelById(id);
         model.addAttribute("msg", "Model auta usunięty");
         model.addAttribute("carmodels", carModelService.findAll());
-        return "admin/showcarmodellist";
+        return "admin/car-model-list";
+    }
+
+    @PostMapping(value = "edit")
+    public String editCarModel(@RequestParam(required = true) Long id, Model model){
+        model.addAttribute("carModelDto", carModelService.findById(id));
+        return "admin/car-model-form";
     }
 }

@@ -1,9 +1,6 @@
 package com.sda.carsharing.web.advice;
 
-import com.sda.carsharing.model.enums.BodyType;
-import com.sda.carsharing.model.enums.CarClass;
-import com.sda.carsharing.model.enums.Fuel;
-import com.sda.carsharing.model.enums.Gear;
+import com.sda.carsharing.model.enums.*;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -31,5 +28,15 @@ public class DictionaryAdvice {
     @ModelAttribute("carClasses")
     public List<CarClass> getCarClasses(){
         return Arrays.asList(CarClass.values());
+    }
+
+    @ModelAttribute("color")
+    public List<Color> getColors(){
+        return Arrays.asList(Color.values());
+    }
+
+    @ModelAttribute("status")
+    public List<Status> getStatus(){
+        return Arrays.asList(Status.values());
     }
 }

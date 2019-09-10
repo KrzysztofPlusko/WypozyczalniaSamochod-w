@@ -1,13 +1,17 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-
+<!DOCTYPE html>
 <html>
 <head>
     <%@ include file="../header.jsp" %>
 </head>
 <body>
 <div class="container">
+    <div class="page-header">
+        <h1>Dodaj model auta</h1>
+    </div>
     <form:form method="POST"
                action="/admin/carmodel" modelAttribute="carModelDto">
+        <form:input path="id" hidden="true" />
         <div class="form-group">
             <form:label path="mark">Marka</form:label>
             <form:input class="form-control" path="mark" required="true"/>
@@ -40,7 +44,7 @@
             <form:label path="price">Cena</form:label>
             <form:input class="form-control" path="price" required="true"/>
         </div>
-        <form:button class="btn btn-primary" type="submit" value="Submit">Dodaj model auta</form:button>
+        <form:button class="btn btn-primary" type="submit" value="Submit">Wykonaj</form:button>
     </form:form>
 </div>
 </body>
