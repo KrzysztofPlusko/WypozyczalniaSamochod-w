@@ -13,4 +13,10 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+<!-- Fontawesome -->
+<script src="https://kit.fontawesome.com/d7976dc1db.js"></script>
+
+<!-- static/css/style.css -->
+<link rel="stylesheet" href="/css/style.css">
+
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>

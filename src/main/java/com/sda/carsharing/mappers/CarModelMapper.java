@@ -6,6 +6,7 @@ import com.sda.carsharing.model.entities.CarModel;
 public class CarModelMapper {
     public static CarModel toEntity(CarModelDto carModelDto){
         CarModel carModel = new CarModel();
+        carModel.setId(carModelDto.getId());
         carModel.setCarClass(carModelDto.getCarClass());
         carModel.setMark(carModelDto.getMark());
         carModel.setModel(carModelDto.getModel());

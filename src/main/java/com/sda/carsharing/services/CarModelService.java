@@ -28,4 +28,12 @@ public class CarModelService {
     public void addCarModel(CarModelDto carModelDto){
         carModelRepository.save(CarModelMapper.toEntity(carModelDto));
     }
+
+    public void deleteCarModelById(Long id) {
+        carModelRepository.deleteById(id);
+    }
+
+    public CarModel findById(Long id) {
+        return carModelRepository.findById(id).get();
+    }
 }
