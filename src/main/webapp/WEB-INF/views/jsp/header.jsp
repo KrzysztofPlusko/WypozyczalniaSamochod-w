@@ -19,4 +19,11 @@
 <!-- static/css/style.css -->
 <link rel="stylesheet" href="/css/style.css">
 
+<!-- sidebar css -->
+<link rel="stylesheet" href="/admin/css/sidebar.css">
+
+<!-- Sidebar js -->
+<script src="/admin/js/sidebar.js"></script>
+
+
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
