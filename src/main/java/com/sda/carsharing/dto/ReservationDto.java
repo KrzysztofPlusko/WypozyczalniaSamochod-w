@@ -1,5 +1,9 @@
 package com.sda.carsharing.dto;
 
+import com.sda.carsharing.model.entities.Car;
+
+import com.sda.carsharing.model.entities.CarModel;
+import com.sda.carsharing.model.entities.Client;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
@@ -31,10 +35,10 @@ public class ReservationDto {
     private BigDecimal price;
 
     @NotBlank
-    private Long clientId;
+    private Client client;
 
     @NotBlank
-    private Long carId;
+    private CarModel carModel;
 
 
 }
