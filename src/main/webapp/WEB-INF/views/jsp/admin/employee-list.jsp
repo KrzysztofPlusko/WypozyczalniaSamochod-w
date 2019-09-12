@@ -6,8 +6,8 @@
 </head>
 <body>
 <div class="container">
-    <c:if test="${msg.length() > 0}">
-        <div class="alert alert-success">${msg}</div>
+    <c:if test="${msp.length() > 0}">
+        <div class="alert alert-success">${msp}</div>
     </c:if>
     <table class="table table-striped">
         <tr>
@@ -15,7 +15,6 @@
             <th>Nazwisko</th>
             <th>Stanowisko</th>
             <th>Odział</th>
-
         </tr>
         <c:forEach items="${employees}" var="employee">
             <tr>
@@ -29,15 +28,21 @@
                         <form id="form-del" action="/admin/employee/del" method="post"
                               onclick="return confirm('Czy na pewno usunć?');">
                             <input hidden name="id" value="${employee.id}">
-                            <div class="float-left"><button alt="Usuń pracownika" class="fas fa-trash-alt"/></div>
+                            <div class="float-left">
+                                <button alt="Usuń pracownika" class="fas fa-trash-alt"/>
+                            </div>
                         </form>
                         <form action="/admin/employee/edit" method="post">
                             <input hidden name="id" value="${employee.id}">
-                            <div class="float-left"><button alt="Edytuj pracownika" class="fas fa-edit"/></div>
+                            <div class="float-left">
+                                <button alt="Edytuj pracownika" class="fas fa-edit"/>
+                            </div>
                         </form>
                         <form action="/admin/employee/add" method="post">
                             <input hidden name="id" value="${employee.id}">
-                            <div class="float-left"><button alt="Dodaj pracownika" class="far fa-plus-square"/></div>
+                            <div class="float-left">
+                                <button alt="Dodaj pracownika" class="far fa-plus-square"/>
+                            </div>
                         </form>
                     </div>
 

@@ -7,7 +7,7 @@
 <body>
 <div class="container">
     <div class="page-header">
-        <h1>Dodaj model auta</h1>
+        <h1>Dodaj pracownika</h1>
     </div>
     <form:form method="POST"
                action="/admin/employee" modelAttribute="employeeDto">
@@ -25,25 +25,10 @@
             <form:select path="position" items="${position}" />
         </div>
         <div class="form-group">
-            <form:label path="branch">Odział</form:label>
+            <form:label path="branch">Oddział</form:label>
             <form:select path="branch" items="${branch}" />
         </div>
-        <div class="form-group">
-            <form:label path="gear">Skrzynia biegów</form:label>
-            <form:select path="gear" items="${gearType}" />
-        </div>
-        <div class="form-group">
-            <form:label path="fuel">Rodzaj Paliwa</form:label>
-            <form:select path="fuel" items="${fuels}"/>
-        </div>
-        <div class="form-group">
-            <form:label path="airCondition">Klimatyzacja <form:checkbox class="form-control" path="airCondition" />
-            </form:label>
-        </div>
-        <div class="form-group">
-            <form:label path="price">Cena</form:label>
-            <form:input class="form-control" path="price" required="true"/>
-        </div>
+
         <form:button class="btn btn-primary" type="submit" value="Submit">Wykonaj</form:button>
     </form:form>
 </div>
