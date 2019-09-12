@@ -40,15 +40,27 @@ public class Reservation extends BaseEntity{
     @NotBlank
     private BigDecimal price;
 
-    //@OneToOne
-    @JoinColumn(name = "car_id", nullable = false)
+//<<<<<<< reservation
+    @ManyToOne
+    @JoinColumn(name = "car_model", nullable = false)
     @NotBlank
-    private Long carId;
+    private CarModel carModel;
+
+    @ManyToOne
+    @JoinColumn(name = "client", nullable = false)
+    @NotBlank
+    private Client client;
+//=======
+    //@OneToOne
+    //@JoinColumn(name = "car_id", nullable = false)
+    //@NotBlank
+    //private Long carId;
 
     //@OneToOne
-    @JoinColumn(name = "client_id", nullable = false)
-    @NotBlank
-    private Long clientId;
+    //@JoinColumn(name = "client_id", nullable = false)
+    //@NotBlank
+    //private Long clientId;
+//>>>>>>> master
     @Override
     public String toString() {
         return "Reservation{" +
@@ -58,11 +70,17 @@ public class Reservation extends BaseEntity{
                 ", reservationBranch=" + reservationBranch +
                 ", returnBranch=" + returnBranch +
                 ", price=" + price +
-                ", carId=" + carId +
-                ", clientId=" + clientId +
+//<<<<<<< reservation
+                ", carModel=" + carModel +
+                ", client=" + client +
+//=======
+              //  ", carId=" + carId +
+              //  ", clientId=" + clientId +
+//>>>>>>> master
                 "} " + super.toString();
     }
 
 
 
 }
+c
