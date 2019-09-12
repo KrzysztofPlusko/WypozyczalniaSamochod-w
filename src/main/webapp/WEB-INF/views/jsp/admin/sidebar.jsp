@@ -11,9 +11,9 @@
             </div>
         </li>
 
-        <li class ="list-group-item"><a class="nav-link" href="#">Pojazdy</a></li>
+        <li class ="list-group-item"><a class="nav-link" href="/admin/car">Pojazdy</a></li>
 
-        <li class ="list-group-item"><a class="nav-link" href="#">Rezerwacje</a></li>
+        <li class ="list-group-item"><a class="nav-link" href="/admin/reservation">Rezerwacje</a></li>
 
     </ul>
 </div>

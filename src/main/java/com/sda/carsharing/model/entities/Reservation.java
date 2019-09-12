@@ -40,12 +40,12 @@ public class Reservation extends BaseEntity{
     @NotBlank
     private BigDecimal price;
 
-    @OneToOne
+    //@OneToOne
     @JoinColumn(name = "car_id", nullable = false)
     @NotBlank
     private Long carId;
 
-    @OneToOne
+    //@OneToOne
     @JoinColumn(name = "client_id", nullable = false)
     @NotBlank
     private Long clientId;
