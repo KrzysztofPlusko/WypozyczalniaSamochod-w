@@ -1,5 +1,6 @@
 package com.sda.carsharing.web.controllers;
 
+//<<<<<<< reservation
 
 import com.sda.carsharing.dto.ReservationDto;
 import com.sda.carsharing.model.entities.Reservation;
@@ -62,3 +63,7 @@ public class ReservationController {
         return "/admin/reservation-form";
     }
 }
+//=======
+//public class ReservationController {
+//}
+//>>>>>>> master
