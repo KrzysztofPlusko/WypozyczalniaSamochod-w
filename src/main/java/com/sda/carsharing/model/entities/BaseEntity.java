@@ -42,6 +42,4 @@ public abstract class BaseEntity {
     public int hashCode() {
         return Objects.hash(id);
     }
-
-    public abstract void addAttribute(String msg, String rezerwacja_dodana);
 }
