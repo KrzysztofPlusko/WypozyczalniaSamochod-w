@@ -39,4 +39,8 @@ public class EmployeeService {
     public void addEmployee(EmployeeDto employeeDto) {
         employeeRepository.save(EmployeeMapper.toEntity2(employeeDto));
     }
+    public void deleteEmployeeById(Long id) {
+        employeeRepository.deleteById(id);
+    }
+
 }
