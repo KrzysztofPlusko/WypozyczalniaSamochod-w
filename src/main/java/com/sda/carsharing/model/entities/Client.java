@@ -21,11 +21,11 @@ public class Client extends BaseEntity {
 
     @NotBlank
     @Column(name = "first_name", updatable = false, nullable = false)
-    private String first_name;
+    private String firstName;
 
     @NotBlank
     @Column(name = "last_name", updatable = false, nullable = false)
-    private String last_name;
+    private String lastName;
 
     @Email
     @NotBlank
@@ -34,7 +34,11 @@ public class Client extends BaseEntity {
 
     @NotBlank
     @Column(name = "adres", updatable = false, nullable = false)
-    private String adres;
+    private String address;
+
+    @NotBlank
+    @Column(name="password",updatable = true, nullable = false)
+    private String password;
 
 
     @Override
