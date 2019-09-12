@@ -32,8 +32,8 @@ public class RegisterController {
         model.addAttribute("newClient", client);
         return "registration-form";
     }
-//    @PostMapping
-//    public String processRegistrationPage(String )
-//
-//
+  //  @PostMapping
+  // public String processRegistrationPage(String )
+
+
 }
