@@ -22,7 +22,7 @@
             <c:if test="${msg.length() > 0}">
                 <div class="alert alert-success">${msg}</div>
             </c:if>
-            <h1>Lista modeli</h1>
+            <h2>Lista modeli</h2>
             <table class="table table-striped">
                 <tr>
                     <th>Id modelu</th>

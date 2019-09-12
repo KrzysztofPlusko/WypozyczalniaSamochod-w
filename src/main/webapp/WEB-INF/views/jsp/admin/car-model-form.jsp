@@ -23,7 +23,7 @@
             <c:if test="${msg.length() > 0}">
                 <div class="alert alert-success">${msg}</div>
             </c:if>
-            <h1>Dodaj model</h1>
+            <h2>Dodaj model</h2>
             <form:form method="POST"
                        action="/admin/carmodel" modelAttribute="carModelDto">
                 <form:input path="id" hidden="true" />
