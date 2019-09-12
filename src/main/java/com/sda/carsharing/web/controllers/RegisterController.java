@@ -8,30 +8,32 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 //@Controller
-//
-//public class RegisterController {
-//
-//    private ClientRepository clientRepository;
-//    private PasswordEncoder passwordEncoder;
-//
-//
-//    @Autowired
-//    public RegisterController(ClientRepository clientRepository, PasswordEncoder passwordEncoder) {
-//        this.clientRepository = clientRepository;
-//        this.passwordEncoder = passwordEncoder;
-//
-//    }
-//
-//    @GetMapping
-//    public String prepareRegistrationPage(Model model) {
-//        Client client = new Client();
-//        model.addAttribute("newClient", client);
-//        return "registration-form";
-//    }
+@Controller
+@RequestMapping(value = "/register")
+public class RegisterController {
+
+    private ClientRepository clientRepository;
+    private PasswordEncoder passwordEncoder;
+
+
+    @Autowired
+    public RegisterController(ClientRepository clientRepository, PasswordEncoder passwordEncoder) {
+        this.clientRepository = clientRepository;
+        this.passwordEncoder = passwordEncoder;
+
+    }
+
+    @GetMapping
+    public String prepareRegistrationPage(Model model) {
+        Client client = new Client();
+        model.addAttribute("newClient", client);
+        return "registration-form";
+    }
 //    @PostMapping
 //    public String processRegistrationPage(String )
 //
 //
-//}
+}
