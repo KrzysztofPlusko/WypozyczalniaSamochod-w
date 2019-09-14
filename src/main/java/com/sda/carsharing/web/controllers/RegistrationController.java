@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping(value = "/register")
-public class RegisterController {
+public class RegistrationController {
 
     private ClientRepository clientRepository;
     private PasswordEncoder passwordEncoder;
 
 
     @Autowired
-    public RegisterController(ClientRepository clientRepository, PasswordEncoder passwordEncoder) {
+    public RegistrationController(ClientRepository clientRepository, PasswordEncoder passwordEncoder) {
         this.clientRepository = clientRepository;
         this.passwordEncoder = passwordEncoder;
 
@@ -30,7 +30,23 @@ public class RegisterController {
         model.addAttribute("newClient", client);
         return "registration-form";
     }
-//  @PostMapping
-// public String processRegistrationPage(String )
+/*  @PostMapping
+// public String processRegistrationPage(String email, String password, String firstName, String lastName, String address)  {
+
+    Client client = new Client();
+
+    client.setEmail(email);
+    String encodedPassword = passwordEncoder.encode(password);
+    client.setPassword(password);
+    client.setFirstName(firstName);
+    client.setLastName(lastName);
+    client.setAddress(address);
+
+    List <Client> clients =
+
+    }
+
+
+    */
 
 }
