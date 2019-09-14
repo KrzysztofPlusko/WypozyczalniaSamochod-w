@@ -11,10 +11,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.sql.DataSource;
 
-//@Configuration
+@Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    /*private DataSource dataSource;
+    private DataSource dataSource;
 
     @Autowired
     public SecurityConfiguration(DataSource dataSource) {
@@ -47,11 +47,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .defaultSuccessUrl("/") // Usuwamy plik `index.html` i dajemy ścieżkę do kontrolera strony głównej
                 .and()
                 .logout()
-                .logoutSuccessUrl("/");  // j.w.*/
+                .logoutSuccessUrl("/");  // j.w.
     }
 
-  /*  @Bean
+    @Bean
     public PasswordEncoder passwordEncoder() {
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
-}*/
+}
