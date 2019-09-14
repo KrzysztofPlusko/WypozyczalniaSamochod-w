@@ -2,7 +2,7 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: lightskyblue">
-    <a class="navbar-bran mr-2" href="https://github.com/honestit">Honest IT</a>
+   <<!-- <a class="navbar-bran mr-2" href="https://github.com/honestit">Honest IT</a> -->>
     <div class="collapse navbar-collapse">
         <ul class="navbar-nav nav nav-pills nav-fill">
             <li class="nav-item active mx-1">

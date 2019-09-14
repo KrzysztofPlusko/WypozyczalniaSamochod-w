@@ -34,6 +34,7 @@ public class CarModelService {
         carModelRepository.deleteById(id);
     }
 
+    @Transactional
     public CarModel findById(Long id) {
         return carModelRepository.findById(id).get();
     }
