@@ -26,4 +26,6 @@ public class CarDto {
     private Integer mileage;
 
     private Status status;
+
+    private Long branchId;
 }

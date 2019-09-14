@@ -43,6 +43,11 @@
                     <form:label path="color">Kolor</form:label>
                     <form:select path="color" items="${color}"></form:select>
                 </div>
+                <div calss="form-group">
+                    <form:label path="branche">Oddział</form:label>
+                    <form:select path="branchId" items="${branches}" itemLabel="${branches.name}"
+                                 itemValue="${branches.id}"></form:select>
+                </div>
                 <form:button class="btn btn-primary" type="submit" value="Submit">Wykonaj</form:button>
             </form:form>
         </div>
