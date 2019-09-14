@@ -21,8 +21,8 @@
             <form:input class="form-control" path="lastName" required="true"/>
         </div>
         <div class="form-group">
-            <form:label path="position">Stanowisko</form:label>
-            <form:select path="position" items="${position}" />
+            <form:label path="role">Stanowisko</form:label>
+            <form:select path="role" items="${role}" />
         </div>
         <div class="form-group">
             <form:label path="branch">Oddział</form:label>

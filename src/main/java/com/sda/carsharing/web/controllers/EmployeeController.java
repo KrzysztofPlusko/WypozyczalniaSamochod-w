@@ -1,9 +1,9 @@
-package com.sda.carsharing.rest.controllers;
+package com.sda.carsharing.web.controllers;
 
-import com.sda.carsharing.dto.CarModelDto;
+
 import com.sda.carsharing.dto.EmployeeDto;
 import com.sda.carsharing.model.entities.Employee;
-import com.sda.carsharing.services.CarModelService;
+
 import com.sda.carsharing.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -28,14 +28,14 @@ public class EmployeeController {
         @GetMapping
         public String showAllView(Model model) {
             model.addAttribute("employees", employeeService.findAll());
-            return "admin/showemployeelist";
+            return "admin/employee-list";
         }
 
         //widok dla dodania nowego pracownika do bazy
         @GetMapping(value = "add")
         public String addEmployeeViev(Model model){
             model.addAttribute("employeeDto", new EmployeeDto());
-            return "admin/addemployee";
+            return "admin/employee-form";
         }
 
         //logika dodania nowego modelu auta do bazy
