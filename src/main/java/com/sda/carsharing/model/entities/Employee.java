@@ -17,18 +17,18 @@ import javax.validation.constraints.NotBlank;
 public class Employee extends BaseEntity {
 
     @NotBlank
-    @Column(name = "first_name", updatable = false, nullable = false)
+    @Column(name = "first_name",  nullable = false)
     private String firstName;
 
     @NotBlank
-    @Column(name = "last_name", updatable = false, nullable = false)
+    @Column(name = "last_name", nullable = false)
     private String lastName;
 
     //@NotBlank
-    @Column(name = "role", updatable = false, nullable = false)
+    @Column(name = "role", nullable = false)
     private Role role; //popraw na Enum
 
     //@NotBlank
-    @Column(name = "branch", updatable = false, nullable = false)
+    @Column(name = "branch", nullable = false)
     private int branch;
 }
