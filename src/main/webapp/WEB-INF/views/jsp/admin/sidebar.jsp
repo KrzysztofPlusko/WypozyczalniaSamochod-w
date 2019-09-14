@@ -15,5 +15,16 @@
 
         <li class ="list-group-item"><a class="nav-link" href="/admin/reservation">Rezerwacje</a></li>
 
+        <li class="list-group-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEmployee" role="button"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Pracownicy
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownEmployee">
+                <a class="dropdown-item" href="/admin/employee">Lista</a>
+                <a class="dropdown-item" href="/admin/employee/add">Dodaj</a>
+            </div>
+        </li>
+
     </ul>
 </div>
