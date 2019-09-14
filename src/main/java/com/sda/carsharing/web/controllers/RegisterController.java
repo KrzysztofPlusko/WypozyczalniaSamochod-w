@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 //@Controller
-@Controller
+/*@Controller
 @RequestMapping(value = "/register")
 public class RegisterController {
 
@@ -31,9 +31,9 @@ public class RegisterController {
         Client client = new Client();
         model.addAttribute("newClient", client);
         return "registration-form";
-    }
+    }*/
   //  @PostMapping
   // public String processRegistrationPage(String )
 
 
-}
+
