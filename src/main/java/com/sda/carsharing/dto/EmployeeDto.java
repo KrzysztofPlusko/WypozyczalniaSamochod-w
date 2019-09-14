@@ -1,5 +1,6 @@
 package com.sda.carsharing.dto;
 
+import com.sda.carsharing.model.enums.Role;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,7 +20,7 @@ public class EmployeeDto {
 
 
     @NotBlank
-    private String role;
+    private Role role;
 
     @NotBlank
     private int branch;
