@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 import static com.sda.carsharing.mappers.ClientMapper.toEntity;
 
 @Service
@@ -22,6 +24,12 @@ public class ClientService {
         Client client = toEntity(clientDto);
         this.clientRepository.save(client);
     }
+
+   @Transactional(readOnly = true)
+    public List<Client> FindAllByUsername(String email) {   // jako username używany email
+        return this.clientRepository.FindAllByUsername(email);
+
+   }
     }
 
 
