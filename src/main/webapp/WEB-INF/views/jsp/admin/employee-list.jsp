@@ -20,7 +20,7 @@
             <tr>
                 <td>${employee.firstName}</td>
                 <td>${employee.lastName}</td>
-                <td>${employee.position}</td>
+                <td>${employee.role}</td>
                 <td>${employee.branch}</td>
 
                 <td>
