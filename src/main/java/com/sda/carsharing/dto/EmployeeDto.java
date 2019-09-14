@@ -19,7 +19,7 @@ public class EmployeeDto {
     private String lastName;
 
 
-    @NotBlank
+    //@NotBlank
     private Role role;
 
     @NotBlank

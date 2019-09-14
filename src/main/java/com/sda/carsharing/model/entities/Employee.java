@@ -24,7 +24,7 @@ public class Employee extends BaseEntity {
     @Column(name = "last_name", updatable = false, nullable = false)
     private String lastName;
 
-    @NotBlank
+    //@NotBlank
     @Column(name = "role", updatable = false, nullable = false)
     private Role role; //popraw na Enum
 
