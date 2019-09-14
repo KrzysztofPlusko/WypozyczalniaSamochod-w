@@ -28,8 +28,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .withUser("user").password("{noop}password").roles("USER");
     }
 
-
- /*   @Override
+    /*   @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication()
                 .dataSource(dataSource)
@@ -50,13 +49,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/logout").authenticated()
                 .anyRequest().authenticated()
                 .and()
+                .csrf().disable()     // można teżdodać do każdego pliku .jsp
                 .formLogin()
                 .loginPage("/login")
                 .defaultSuccessUrl("/") // Usuwamy plik `index.html` i dajemy ścieżkę do kontrolera strony głównej
                 .and()
                 .logout()
                 .logoutSuccessUrl("/");  // j.w.
-    }
+   }
     @Bean
     public PasswordEncoder passwordEncoder() {
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
