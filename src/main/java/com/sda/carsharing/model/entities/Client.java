@@ -33,7 +33,7 @@ public class Client extends BaseEntity {
     private String email;
 
     @NotBlank
-    @Column(name = "adres", updatable = false, nullable = false)
+    @Column(name = "address", updatable = false, nullable = false)
     private String address;
 
     @NotBlank
