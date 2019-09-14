@@ -6,10 +6,12 @@ import com.sda.carsharing.model.entities.Employee;
 
 import com.sda.carsharing.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+@Controller
 @RequestMapping(value = "/admin/employee")
 public class EmployeeController {
 
