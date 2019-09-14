@@ -19,7 +19,7 @@ public class EmployeeDto {
 
 
     @NotBlank
-    private String position;
+    private String role;
 
     @NotBlank
     private int branch;

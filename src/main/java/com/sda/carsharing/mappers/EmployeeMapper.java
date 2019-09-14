@@ -10,7 +10,7 @@ public class EmployeeMapper {
     Employee employee = new Employee();
     employee.setFirstName(employeeDto.getFirstName());
     employee.setLastName(employeeDto.getLastName());
-    employee.setPosition(employeeDto.getPosition());
+    employee.setRole(employeeDto.getRole());
     employee.setBranch(employeeDto.getBranch());
     return employee;
     }

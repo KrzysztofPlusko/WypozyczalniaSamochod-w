@@ -1,5 +1,6 @@
 package com.sda.carsharing.model.entities;
 
+import com.sda.carsharing.model.enums.Role;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,8 +25,8 @@ public class Employee extends BaseEntity {
     private String lastName;
 
     @NotBlank
-    @Column(name = "position", updatable = false, nullable = false)
-    private String position; //popraw na Enum
+    @Column(name = "role", updatable = false, nullable = false)
+    private Role role; //popraw na Enum
 
     @NotBlank
     @Column(name = "branch", updatable = false, nullable = false)
