@@ -1,7 +1,4 @@
 package com.sda.carsharing.web.controllers;
-
-
-
 import com.sda.carsharing.model.entities.Client;
 import com.sda.carsharing.model.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-//@Controller
-/*@Controller
+@Controller
 @RequestMapping(value = "/register")
 public class RegisterController {
 
@@ -33,11 +29,8 @@ public class RegisterController {
         Client client = new Client();
         model.addAttribute("newClient", client);
         return "registration-form";
-    }*/
-    //  @PostMapping
-    // public String processRegistrationPage(String )
+    }
+//  @PostMapping
+// public String processRegistrationPage(String )
 
-
-
-
-
+}
