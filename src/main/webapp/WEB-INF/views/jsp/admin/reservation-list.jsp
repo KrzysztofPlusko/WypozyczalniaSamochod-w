@@ -11,26 +11,25 @@
     </c:if>
     <table class="table table-striped">
         <tr>
+            <th>Klient</th>
             <th>Data rezerwacji</th>
             <th>Data wypożyczenia</th>
             <th>Data oddania</th>
             <th>Oddział wypożyczenia</th>
             <th>Oddział oddania</th>
-            <th>Cena</th>
             <th>carModel</th>
-            <th>Klient</th>
             <th>Action</th>
         </tr>
         <c:forEach items="${carmodels}" var="carmodel">
             <tr>
+                <td>${reservation.client}</td>
                 <td>${reservation.dateOfReservation}</td>
                 <td>${reservation.startingDate}</td>
                 <td>${reservation.endDate}</td>
                 <td>${reservation.reservationBranch}</td>
                 <td>${reservation.returnBranch}</td>
-                <td>${reservation.price}</td>
                 <td>${reservation.carModel}</td>
-                <td>${reservation.client}</td>
+
 
                 <td>
                     <div id="action-buttons-group" class="position-relative">

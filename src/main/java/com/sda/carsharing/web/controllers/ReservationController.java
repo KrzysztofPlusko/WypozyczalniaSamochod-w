@@ -1,9 +1,8 @@
 package com.sda.carsharing.web.controllers;
 
-//<<<<<<< reservation
+
 
 import com.sda.carsharing.dto.ReservationDto;
-import com.sda.carsharing.model.entities.Reservation;
 import com.sda.carsharing.services.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping(value = "/admin/reservation")
+
 public class ReservationController {
     private ReservationService reservationService;
 
@@ -31,10 +30,10 @@ public class ReservationController {
     }
 
     //widok dodania nowej rezerwacji
-    @PostMapping(value = "add")
-    public String addmodelView(Model model, @RequestParam(required = true) Long id) {
+    @GetMapping(value = "/reservation/add")
+    public String addmodelView(Model model) {
         model.addAttribute("reservationDto", new ReservationDto());
-        return "/admin/reservation-form";
+        return "reservation-form";
     }
 
     @PostMapping
@@ -46,7 +45,7 @@ public class ReservationController {
             model.addAttribute("msg", "rezerwacja zaktualizowana");
         }
         model.addAttribute("rezerwacje", reservationService.findAll());
-        return "/admin/reservation-list";
+        return "reservation-list";
 
     }
 
@@ -63,7 +62,4 @@ public class ReservationController {
         return "/admin/reservation-form";
     }
 }
-//=======
-//public class ReservationController {
-//}
-//>>>>>>> master
+
