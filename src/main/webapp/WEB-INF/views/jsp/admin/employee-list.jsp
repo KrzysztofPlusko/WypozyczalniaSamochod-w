@@ -6,8 +6,8 @@
 </head>
 <body>
 <div class="container">
-    <c:if test="${msp.length() > 0}">
-        <div class="alert alert-success">${msp}</div>
+    <c:if test="${msg.length() > 0}">
+        <div class="alert alert-success">${msg}</div>
     </c:if>
     <table class="table table-striped">
         <tr>

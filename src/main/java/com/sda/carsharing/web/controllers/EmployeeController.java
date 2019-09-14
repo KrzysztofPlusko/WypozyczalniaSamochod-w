@@ -44,7 +44,7 @@ public class EmployeeController {
 
             this.employeeService.addEmployee(employeeDto);
 
-            model.addAttribute("msp", "Pracownik dodany");
+            model.addAttribute("msg", "Pracownik dodany");
             model.addAttribute("employee", employeeService.findAll());
             return "admin/showemployeelist";
         }
@@ -52,7 +52,7 @@ public class EmployeeController {
         @PostMapping(value = "delp")
         public String delpEmployee(@RequestParam(required = true) Long id, Model model){
             this.employeeService.deleteEmployeeById(id);
-            model.addAttribute("msp", "Pracownik usunięty");
+            model.addAttribute("msg", "Pracownik usunięty");
             model.addAttribute("employees", employeeService.findAll());
             return "admin/showemployeelist";
         }
