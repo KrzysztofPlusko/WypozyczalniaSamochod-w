@@ -23,9 +23,9 @@
             <c:if test="${msg.length() > 0}">
                 <div class="alert alert-success">${msg}</div>
             </c:if>
-            <h2>Dodaj pojazd</h2>
+            <h2>Dodaj pojazd z modelu ID ${carModel}</h2>
             <form:form action="/admin/car" method="post" modelAttribute="carDto">
-                <input value="${carmodel}" name="carModelId" hidden />
+                <input value="${carModel}" name="carModelId" hidden />
                 <form:input hidden="true" path="status" value="AVAILABLE"></form:input>
                 <div class="form-group">
                     <form:label path="plateNumber">Numer rejestracyjny</form:label>

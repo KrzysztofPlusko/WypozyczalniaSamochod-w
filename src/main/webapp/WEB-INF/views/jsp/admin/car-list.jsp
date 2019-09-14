@@ -22,7 +22,7 @@
             <c:if test="${msg.length() > 0}">
                 <div class="alert alert-success">${msg}</div>
             </c:if>
-            <h2>Lista modeli</h2>
+            <h2>Lista aut</h2>
             <table class="table table-striped">
                 <tr>
                     <th>Id modelu</th>
@@ -45,11 +45,11 @@
                             <div id="action-buttons-group" class="position-relative">
                                 <form id="form-del" action="/admin/car/del" method="post"
                                       onclick="return confirm('Czy na pewno usunć?');">
-                                    <input hidden name="id" value="${carmodel.id}">
+                                    <input hidden name="id" value="${car.id}">
                                     <div class="float-left"><button alt="Usuń pojazd" class="fas fa-trash-alt"/></div>
                                 </form>
                                 <form action="/admin/car/edit" method="post">
-                                    <input hidden name="id" value="${carmodel.id}">
+                                    <input hidden name="id" value="${car.id}">
                                     <div class="float-left"><button alt="Edytuj pojazd" class="fas fa-edit"/></div>
                                 </form>
                             </div>

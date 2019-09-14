@@ -7,6 +7,7 @@ public class CarMapper {
     public static Car toEntity(CarDto carDto){
         Car car = new Car();
         car.setCarModel(carDto.getCarModel());
+        //car.setBranches(carDto.getBranches());
         car.setColor(carDto.getColor());
         car.setMileage(carDto.getMileage());
         car.setPlateNumber(carDto.getPlateNumber());

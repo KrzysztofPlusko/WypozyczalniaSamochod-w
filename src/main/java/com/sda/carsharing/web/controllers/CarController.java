@@ -39,10 +39,21 @@ public class CarController {
 
     //logika dodania nowego pojazdu
     @PostMapping
-    public String saveCar(@Valid @ModelAttribute("carDto") CarDto carDto, @RequestParam Long carModelId, Model model){
-        carDto.setCarModel(carModelService.findById((long) 1));
+    public String saveCar(@Valid @ModelAttribute("carDto") CarDto carDto, Model model){
+        carDto.setCarModel(carModelService.findById(carDto.getCarModelId()));
         carService.saveCar(carDto);
         model.addAttribute("cars", carService.findAll());
+        model.addAttribute("msg", "Auto zostalo dodane");
         return "admin/car-list";
     }
+
+    //logika usuwania pojazdu
+    @PostMapping(value = "del")
+    public String delCar(@RequestParam(required = true) Long id, Model model){
+        carService.delCar(id);
+        model.addAttribute("cars", carService.findAll());
+        model.addAttribute("msg", "Auto zostało usunięte");
+        return "admin/car-list";
+    }
+
 }
