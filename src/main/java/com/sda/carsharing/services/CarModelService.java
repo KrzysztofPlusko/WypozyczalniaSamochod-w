@@ -29,10 +29,12 @@ public class CarModelService {
         carModelRepository.save(CarModelMapper.toEntity(carModelDto));
     }
 
+    @Transactional
     public void deleteCarModelById(Long id) {
         carModelRepository.deleteById(id);
     }
 
+    @Transactional
     public CarModel findById(Long id) {
         return carModelRepository.findById(id).get();
     }
