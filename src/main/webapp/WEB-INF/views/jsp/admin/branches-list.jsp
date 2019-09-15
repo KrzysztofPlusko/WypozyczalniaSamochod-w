@@ -30,25 +30,25 @@
                     <th>Misto</th>
                     <th>Adres</th>
                 </tr>
-                <c:forEach items="${cars}" var="car">
+                <c:forEach items="${branches}" var="branch">
                     <tr>
-                        <td>${branches.id}</td>
-                        <td>${branches.name}</td>
-                        <td>${branches.city}</td>
-                        <td>${branches.address}</td>
+                        <td>${branch.id}</td>
+                        <td>${branch.name}</td>
+                        <td>${branch.city}</td>
+                        <td>${branch.address}</td>
                         <td>
                             <div id="action-buttons-group" class="position-relative">
                                 <form id="form-del" action="/admin/branches/del" method="post"
                                       onclick="return confirm('Czy na pewno usunć?');">
-                                    <input hidden name="id" value="${branches.id}">
+                                    <input hidden name="id" value="${branch.id}">
                                     <div class="float-left"><button alt="Usuń oddział" class="fas fa-trash-alt"/></div>
                                 </form>
                                 <form action="/admin/branches/edit" method="post">
-                                    <input hidden name="id" value="${branches.id}">
+                                    <input hidden name="id" value="${branch.id}">
                                     <div class="float-left"><button alt="Edytuj oddział" class="fas fa-edit"/></div>
                                 </form>
                                 <form action="/admin/branches-form/add" method="post">
-                                    <input hidden name="id" value="${branches.id}">
+                                    <input hidden name="id" value="${branch.id}">
                                     <div class="float-left"><button alt="Dodaj oddział" class="far fa-plus-square"/></div>
                                 </form>
                             </div>

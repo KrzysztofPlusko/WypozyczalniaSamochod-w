@@ -36,7 +36,7 @@ public class BranchesController {
 
     @PostMapping
     public String addBranche(Model model, @Valid @ModelAttribute("brancheDto") BranchesDto branchesDto) {
-        branchesService.addBranches(branchesDto);
+        this.branchesService.addBranches(branchesDto);
         model.addAttribute("branches", branchesService.findAll());
         model.addAttribute("msg", "Oddział dodany");
         return "admin/branches-list";
