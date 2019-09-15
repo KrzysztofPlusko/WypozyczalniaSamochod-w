@@ -6,12 +6,12 @@ import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
 import java.util.List;
+
 @Data
 public class BranchesDto {
 
-
-    @NotBlank
     private long id;
+
     private String name;
 
     private List<Car> cars;
