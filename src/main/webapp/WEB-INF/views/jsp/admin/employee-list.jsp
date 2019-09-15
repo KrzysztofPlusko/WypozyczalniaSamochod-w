@@ -30,7 +30,7 @@
                     <th>Imie</th>
                     <th>Nazwisko</th>
                     <th>Stanowisko</th>
-                    <th>Odzial</th>
+                    <th>Oddzial</th>
 
                 </tr>
                 <c:forEach items="${employees}" var="employee">
