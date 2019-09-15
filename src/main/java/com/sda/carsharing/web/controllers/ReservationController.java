@@ -1,13 +1,15 @@
 package com.sda.carsharing.web.controllers;
 
 
-
 import com.sda.carsharing.dto.ReservationDto;
 import com.sda.carsharing.services.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 
@@ -23,7 +25,7 @@ public class ReservationController {
     }
 
     //wyswietl listę wszystkich rezerwacji
-    @GetMapping
+    @GetMapping(value = "reservation")
     public String findAll(Model model) {
         model.addAttribute("reservation", reservationService.findAll());
         return "admin/reservation-list";
@@ -36,7 +38,7 @@ public class ReservationController {
         return "reservation-form";
     }
 
-    @PostMapping
+    @PostMapping(value = "reservation")
     public String saveReservation(@Valid @ModelAttribute("reservationDto") ReservationDto reservationDto, Model model) {
         this.reservationService.addReservation(reservationDto);
         if (reservationDto.getId() == null) {
@@ -49,14 +51,14 @@ public class ReservationController {
 
     }
 
-    @PostMapping(value = "del")
+    @PostMapping(value = "reservation/del")
     public String delReservation(@RequestParam(required = true)Long id, Model model){
         this.reservationService.deleteReservationById(id);
         model.addAttribute("msg", "rezerwacja usunieta");
         model.addAttribute("rezerwacje", reservationService.findAll());
         return "/admin/reservation-list";
     }
-    @PostMapping(value = "edit")
+    @PostMapping(value = "reservation/edit")
     public String editReservation(@RequestParam(required = true)Long id, Model model){
         model.addAttribute("reservationDto",reservationService.findById(id));
         return "/admin/reservation-form";
