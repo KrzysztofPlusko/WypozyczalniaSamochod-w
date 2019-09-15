@@ -6,10 +6,11 @@ import com.sda.carsharing.mappers.ReservationMapper;
 import com.sda.carsharing.model.entities.Branches;
 import com.sda.carsharing.model.repositories.BranchesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
+@Service
 public class BranchesService {
     private BranchesRepository branchesRepository;
 

@@ -12,11 +12,14 @@ public class BranchesDto {
 
     @NotBlank
     private long id;
+    private String name;
 
-    @NotBlank
     private List<Car> cars;
-    @NotBlank
+
     private List<Employee> employees;
     @NotBlank
-    private String Adress;
+    private String address;
+    @NotBlank
+    private String city;
+
 }

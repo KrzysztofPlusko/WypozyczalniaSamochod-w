@@ -23,22 +23,22 @@
             <c:if test="${msg.length() > 0}">
                 <div class="alert alert-success">${msg}</div>
             </c:if>
-            <h2>Dodaj pojazd</h2>
-            <form:form action="/admin/branches" method="post" branchesAttribute="branchesDto">
-                <input value="${branches}" name="branchesId" hidden />
-                <form:input hidden="true" path="status" value="AVAILABLE"></form:input>
+            <h2>Dodaj oddział</h2>
+            <form:form action="/admin/branches" method="post" modelAttribute="brancheDto">
+
                 <div class="form-group">
-                    <form:label path="car">Samochód</form:label>
-                    <form:input path="car" class="form-control" required="true"></form:input>
+                    <form:label path="name">Nazwa oddziału</form:label>
+                    <form:input path="name" class="form-control" required="true"></form:input>
                 </div>
                 <div class="form-group">
-                    <form:label path="adress">Adres oddziału</form:label>
-                    <form:input path="adress" class="form-control" required="true"></form:input>
+                    <form:label path="city">Miasto</form:label>
+                    <form:input path="city" class="form-control" required="true"></form:input>
                 </div>
                 <div class="form-group">
-                    <form:label path="employee">Pracownik</form:label>
-                    <form:input path="employee" class="form-control" required="true"></form:input>
+                    <form:label path="address">Adres</form:label>
+                    <form:input path="address" class="form-control" required="true"></form:input>
                 </div>
+
                 <form:button class="btn btn-primary" type="submit" value="Submit">Wykonaj</form:button>
             </form:form>
         </div>

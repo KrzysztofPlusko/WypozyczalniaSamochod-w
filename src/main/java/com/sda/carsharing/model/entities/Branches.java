@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import java.util.List;
@@ -15,16 +16,17 @@ import java.util.List;
 @Setter @Getter
 public class Branches extends BaseEntity{
     private String name;
+    @OneToMany
     @Column(name = "cars")
-    @NotBlank
     private List<Car> cars;
 
-    @Column(name = "adress")
+    @Column(name = "address")
     @NotBlank
-    private String Adress;
-
+    private String address;
+    @NotBlank
+    private String city;
+    @OneToMany
     @Column(name = "employees")
-    @NotBlank
     private List<Employee> employees;
 
 }
