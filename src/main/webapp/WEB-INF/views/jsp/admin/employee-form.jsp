@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
@@ -21,8 +22,8 @@
             <form:input class="form-control" path="lastName" required="true"/>
         </div>
         <div class="form-group">
-            <form:label path="position">Stanowisko</form:label>
-            <form:select path="position" items="${position}" />
+            <form:label path="role">Stanowisko</form:label>
+            <form:select path="role" items="${role}" />
         </div>
         <div class="form-group">
             <form:label path="branch">Oddział</form:label>

@@ -23,7 +23,7 @@ public class ReservationDto {
     private LocalDate dateOfReservation;
 
     @NotBlank
-    private LocalDate startingReservation;
+    private LocalDate startingDate;
 
     @NotBlank
     private LocalDate endDate;

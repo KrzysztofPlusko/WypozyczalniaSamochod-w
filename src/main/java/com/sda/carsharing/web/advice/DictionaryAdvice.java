@@ -11,32 +11,37 @@ import java.util.List;
 public class DictionaryAdvice {
 
     @ModelAttribute("fuels")
-    public List<Fuel> getFuels () {
+    public List<Fuel> getFuels() {
         return Arrays.asList(Fuel.values());
     }
 
     @ModelAttribute("gearType")
-    public List<Gear> getGearTypes(){
+    public List<Gear> getGearTypes() {
         return Arrays.asList(Gear.values());
     }
 
     @ModelAttribute("bodyType")
-    public List<BodyType> getBodyTypes(){
+    public List<BodyType> getBodyTypes() {
         return Arrays.asList(BodyType.values());
     }
 
     @ModelAttribute("carClasses")
-    public List<CarClass> getCarClasses(){
+    public List<CarClass> getCarClasses() {
         return Arrays.asList(CarClass.values());
     }
 
     @ModelAttribute("color")
-    public List<Color> getColors(){
+    public List<Color> getColors() {
         return Arrays.asList(Color.values());
     }
 
     @ModelAttribute("status")
-    public List<Status> getStatus(){
+    public List<Status> getStatus() {
         return Arrays.asList(Status.values());
+    }
+
+    @ModelAttribute("role")
+    public List<Role> getRole(){
+        return Arrays.asList((Role.values()));
     }
 }

@@ -31,4 +31,6 @@ public class CarModelDto {
     private boolean airCondition;
 
     private BigDecimal price;
+
+    private Boolean isDeleted;
 }

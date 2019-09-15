@@ -31,7 +31,7 @@ public class CarModelService {
 
     @Transactional
     public void deleteCarModelById(Long id) {
-        carModelRepository.deleteById(id);
+        carModelRepository.hideById(id);
     }
 
     @Transactional
