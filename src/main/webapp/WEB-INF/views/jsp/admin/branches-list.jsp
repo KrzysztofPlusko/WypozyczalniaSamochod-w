@@ -26,18 +26,16 @@
             <table class="table table-striped">
                 <tr>
                     <th>Id oddziału</th>
-                    <th>Samochód</th>
+                    <th>Nazwa oddziału</th>
+                    <th>Misto</th>
                     <th>Adres</th>
-                    <th>Pracownik/th>
-
                 </tr>
                 <c:forEach items="${cars}" var="car">
                     <tr>
                         <td>${branches.id}</td>
-                        <td>${branches.Car}</td>
-                        <td>${branches.adress}</td>
-                        <td>${branches.employee}</td>
-
+                        <td>${branches.name}</td>
+                        <td>${branches.city}</td>
+                        <td>${branches.address}</td>
                         <td>
                             <div id="action-buttons-group" class="position-relative">
                                 <form id="form-del" action="/admin/branches/del" method="post"
