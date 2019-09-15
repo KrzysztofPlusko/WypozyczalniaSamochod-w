@@ -1,5 +1,7 @@
 package com.sda.carsharing.dto;
 
+import com.sda.carsharing.model.entities.Branches;
+import com.sda.carsharing.model.enums.Role;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +11,7 @@ import javax.validation.constraints.NotBlank;
 @Getter
 @Setter
 public class EmployeeDto {
-    private int id;
+    private Long id;
 
     @NotBlank
     private String firstName;
@@ -18,9 +20,9 @@ public class EmployeeDto {
     private String lastName;
 
 
-    @NotBlank
-    private String position;
+    //@NotBlank
+    private Role role;
 
-    @NotBlank
+    //@NotBlank
     private int branch;
 }
