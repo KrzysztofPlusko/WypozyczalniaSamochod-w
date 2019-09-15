@@ -41,7 +41,7 @@
                         <td>${carmodel.bodyType}</td>
                         <td>${carmodel.gear}</td>
                         <td>${carmodel.fuel}</td>
-                        <td>${carmodel.airCondition}</td>
+                        <td>${carmodel.isDeleted}</td>
                         <td>${carmodel.price}</td>
                         <td>
                             <div id="action-buttons-group" class="position-relative">
