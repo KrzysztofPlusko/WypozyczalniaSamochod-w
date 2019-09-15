@@ -35,16 +35,16 @@
                     <div id="action-buttons-group" class="position-relative">
                         <form id="form-del" action="/admin/reservation/del" method="post"
                               onclick="return confirm('Czy na pewno usunć?');">
-                            <input hidden name="id" value="${carmodel.id}">
+                            <input hidden name="id" value="${reservation.id}">
                             <div class="float-left"><button alt="Usuń rezerwację" class="fas fa-trash-alt"/></div>
                         </form>
-                        <form action="/admin/carmodel/edit" method="post">
-                            <input hidden name="id" value="${carmodel.id}">
+                        <form action="/admin/reservation/edit" method="post">
+                            <input hidden name="id" value="${reservation.id}">
                             <div class="float-left"><button alt="Edytuj rezerwację" class="fas fa-edit"/></div>
                         </form>
                         <form action="/admin/reservation-form/add" method="post">
                             <input hidden name="id" value="${reservation.id}">
-                            <div class="float-left"><button alt="Dodaj pojazd z modelu" class="far fa-plus-square"/></div>
+                            <div class="float-left"><button alt="Dodaj rezerwacje" class="far fa-plus-square"/></div>
                         </form>
                     </div>
 
