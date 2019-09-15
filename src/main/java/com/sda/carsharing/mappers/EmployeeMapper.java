@@ -8,6 +8,7 @@ import com.sda.carsharing.model.entities.Employee;
 public class EmployeeMapper {
     public static Employee toEntity(EmployeeDto employeeDto){
     Employee employee = new Employee();
+    employee.setId(employeeDto.getId());
     employee.setFirstName(employeeDto.getFirstName());
     employee.setLastName(employeeDto.getLastName());
     employee.setRole(employeeDto.getRole());

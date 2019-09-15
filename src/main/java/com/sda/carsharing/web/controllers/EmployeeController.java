@@ -31,7 +31,7 @@ public class EmployeeController {
     }
 
     //widok dla dodania nowego pracownika do bazy
-    @GetMapping(value = "add")
+    @GetMapping(value = "/add")
     public String addEmployeeViev(Model model) {
         model.addAttribute("employeeDto", new EmployeeDto());
         return "admin/employee-form";
@@ -44,18 +44,23 @@ public class EmployeeController {
         this.employeeService.addEmployee(employeeDto);
 
         model.addAttribute("msg", "Pracownik dodany");
-        model.addAttribute("employee", employeeService.findAll());
+        model.addAttribute("employees", employeeService.findAll());
         return "admin/employee-list";
     }
 
-    @PostMapping(value = "delp")
-    public String delpEmployee(@RequestParam(required = true) Long id, Model model) {
+    @PostMapping(value = "/del")
+    public String delEmployee(@RequestParam(required = true) Long id, Model model) {
         this.employeeService.deleteEmployeeById(id);
         model.addAttribute("msg", "Pracownik usunięty");
         model.addAttribute("employees", employeeService.findAll());
         return "admin/employee-list";
     }
 
+    @PostMapping(value = "/edit")
+    public String editEmployee(@RequestParam(required = true) Long id, Model model){
+        model.addAttribute("employeeDto", employeeService.findById(id));
+        return "admin/employee-form";
+    }
 
 }
 

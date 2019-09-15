@@ -39,4 +39,9 @@ public class EmployeeService {
         employeeRepository.deleteById(id);
     }
 
+    @Transactional
+    public Employee findById(Long id) {
+        return employeeRepository.findById(id).get();
+    }
 }
+
