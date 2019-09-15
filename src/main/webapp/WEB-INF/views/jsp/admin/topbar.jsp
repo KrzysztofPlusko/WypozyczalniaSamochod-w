@@ -1,4 +1,4 @@
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
     <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
 
