@@ -25,6 +25,16 @@
                 <a class="dropdown-item" href="/admin/employee">Lista</a>
                 <a class="dropdown-item" href="/admin/employee/add">Dodaj</a>
             </div>
+        <li class="list-group-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBranches" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Oddziały
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBranches">
+                <a class="dropdown-item" href="/admin/branches">Lista</a>
+                <a class="dropdown-item" href="/admin/branches/add">Dodaj</a>
+            </div>
+        </li>
+
         </li>
 
     </ul>

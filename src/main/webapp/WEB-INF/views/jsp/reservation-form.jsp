@@ -26,7 +26,7 @@
             </c:if>
             <h2>Dodaj rezerwację</h2>
             <form:form method="POST"
-                       action="/admin/carmodel" modelAttribute="carModelDto">
+                       action="/admin/reservation" modelAttribute="reservationDto">
                 <form:input path="id" hidden="true" />
                 <div class="form-group">
                     <form:label path="client">Klient</form:label>
@@ -34,16 +34,16 @@
                 </div>
                 <div class="form-group">
                     <form:label path="dateOfReservation">Data rezerwacji</form:label>
-                    <form:input id="datepicker" class="form-control" path="dateOfReservation" required="true"/>
+                    <form:input type="date" class="form-control" path="dateOfReservation" required="true"/>
 
                 </div>
                 <div class="form-group">
                     <form:label path="startingDate">Data wypożyczenia</form:label>
-                    <form:input id="datepicker" class="form-control" path="startingDate" required="true"/>
+                    <form:input type="date" class="form-control" path="startingDate" required="true"/>
                 </div>
                 <div class="form-group">
                     <form:label path="endDate">Data oddania</form:label>
-                    <form:input id="datepicker" class="form-control" path="endDate" required="true"/>
+                    <form:input type="date"  class="form-control" path="endDate" required="true"/>
 
                 </div>
                 <div class="form-group">
@@ -51,8 +51,8 @@
                     <form:select path="reservationBranch" items="${reservationBranch}" />
                 </div>
                 <div class="form-group">
-                    <form:label path="endBranch">Oddział oddania</form:label>
-                    <form:select path="endBranch" items="${endBranch}" />
+                    <form:label path="returnBranch">Oddział oddania</form:label>
+                    <form:select path="returnBranch" items="${endBranch}" />
                 </div>
 
                 <div class="form-group">
