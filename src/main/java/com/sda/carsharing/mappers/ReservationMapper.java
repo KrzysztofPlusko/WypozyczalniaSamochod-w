@@ -13,7 +13,7 @@ public class ReservationMapper {
        //reservation.setClientId(reservationDto.getClientId());
 //>>>>>>> master
        reservation.setDateOfReservation(reservationDto.getDateOfReservation());
-       reservation.setStartingDate(reservationDto.getStartingReservation());
+       reservation.setStartingDate(reservationDto.getStartingDate());
        reservation.setEndDate(reservationDto.getEndDate());
        reservation.setPrice(reservationDto.getPrice());
        reservation.setReservationBranch(reservationDto.getReservationBranch());
