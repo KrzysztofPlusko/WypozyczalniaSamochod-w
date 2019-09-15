@@ -24,24 +24,20 @@
                 <div class="alert alert-success">${msg}</div>
             </c:if>
             <h2>Dodaj pojazd</h2>
-            <form:form action="/admin/branches" method="post" modelAttribute="carDto">
+            <form:form action="/admin/branches" method="post" branchesAttribute="branchesDto">
                 <input value="${branches}" name="branchesId" hidden />
                 <form:input hidden="true" path="status" value="AVAILABLE"></form:input>
                 <div class="form-group">
-                    <form:label path="plateNumber">Numer rejestracyjny</form:label>
-                    <form:input path="plateNumber" class="form-control" required="true"></form:input>
+                    <form:label path="car">Samochód</form:label>
+                    <form:input path="car" class="form-control" required="true"></form:input>
                 </div>
                 <div class="form-group">
-                    <form:label path="productionDate">Rok produkcji</form:label>
-                    <form:input path="productionDate" class="form-control" required="true"></form:input>
+                    <form:label path="adress">Adres oddziału</form:label>
+                    <form:input path="adress" class="form-control" required="true"></form:input>
                 </div>
                 <div class="form-group">
-                    <form:label path="mileage">Przebieg</form:label>
-                    <form:input path="mileage" class="form-control" required="true"></form:input>
-                </div>
-                <div class="form-group">
-                    <form:label path="color">Kolor</form:label>
-                    <form:select path="color" items="${color}"></form:select>
+                    <form:label path="employee">Pracownik</form:label>
+                    <form:input path="employee" class="form-control" required="true"></form:input>
                 </div>
                 <form:button class="btn btn-primary" type="submit" value="Submit">Wykonaj</form:button>
             </form:form>

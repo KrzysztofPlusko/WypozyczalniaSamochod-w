@@ -25,7 +25,7 @@
             </c:if>
             <h2>Dodaj rezerwację</h2>
             <form:form method="POST"
-                       action="/admin/carmodel" modelAttribute="carModelDto">
+                       action="/admin/reservation" modelAttribute="reservationDto">
                 <form:input path="id" hidden="true" />
                 <div class="form-group">
                     <form:label path="client">Klient</form:label>

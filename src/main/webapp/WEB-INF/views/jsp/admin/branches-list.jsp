@@ -49,6 +49,10 @@
                                     <input hidden name="id" value="${branches.id}">
                                     <div class="float-left"><button alt="Edytuj oddział" class="fas fa-edit"/></div>
                                 </form>
+                                <form action="/admin/branches-form/add" method="post">
+                                    <input hidden name="id" value="${branches.id}">
+                                    <div class="float-left"><button alt="Dodaj oddział" class="far fa-plus-square"/></div>
+                                </form>
                             </div>
 
                         </td>
