@@ -1,5 +1,5 @@
 <div class="bg-light border-right" id="sidebar-wrapper">
-    <div class="sidebar-heading text-light bg-dark">Start Bootstrap </div>
+    <div class="sidebar-heading text-light bg-dark">CarSharingApp</div>
     <ul class="list-group">
         <li class="list-group-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
