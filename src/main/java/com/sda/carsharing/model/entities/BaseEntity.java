@@ -19,6 +19,14 @@ public abstract class BaseEntity {
     private LocalDateTime createdOn;
     @Column(name = "updated_on")
     private LocalDateTime updatedOn;
+    @Column(name = "is_deleted")
+    private boolean isDeleted;
+
+    //getter dla booleana, lombok tworzy inna nazwe
+    public boolean getIsDeleted() {
+        return isDeleted;
+    }
+
 
     @PrePersist
     public void prePersist() {
