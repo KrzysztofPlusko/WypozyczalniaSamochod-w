@@ -20,7 +20,7 @@
             <th>carModel</th>
             <th>Action</th>
         </tr>
-        <c:forEach items="${carmodels}" var="carmodel">
+        <c:forEach items="${reservation}" var="reservation">
             <tr>
                 <td>${reservation.client}</td>
                 <td>${reservation.dateOfReservation}</td>
@@ -38,13 +38,9 @@
                             <input hidden name="id" value="${reservation.id}">
                             <div class="float-left"><button alt="Usuń rezerwację" class="fas fa-trash-alt"/></div>
                         </form>
-                        <form action="/admin/reservation/edit" method="post">
-                            <input hidden name="id" value="${reservation.id}">
-                            <div class="float-left"><button alt="Edytuj rezerwację" class="fas fa-edit"/></div>
-                        </form>
                         <form action="/admin/reservation-form/add" method="post">
                             <input hidden name="id" value="${reservation.id}">
-                            <div class="float-left"><button alt="Dodaj rezerwacje" class="far fa-plus-square"/></div>
+                            <div class="float-left"><button alt="Wypożycz pojazd" class="far fa-plus-square"/></div>
                         </form>
                     </div>
 

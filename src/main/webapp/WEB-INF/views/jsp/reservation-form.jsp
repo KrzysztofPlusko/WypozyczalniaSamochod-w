@@ -50,8 +50,8 @@
                     <form:select path="reservationBranch" items="${reservationBranch}" />
                 </div>
                 <div class="form-group">
-                    <form:label path="endBranch">Oddział oddania</form:label>
-                    <form:select path="endBranch" items="${endBranch}" />
+                    <form:label path="returnBranch">Oddział oddania</form:label>
+                    <form:select path="returnBranch" items="${endBranch}" />
                 </div>
 
                 <div class="form-group">
