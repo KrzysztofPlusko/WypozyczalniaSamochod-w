@@ -33,16 +33,16 @@
                 </div>
                 <div class="form-group">
                     <form:label path="dateOfReservation">Data rezerwacji</form:label>
-                    <form:input id="datepicker" class="form-control" path="dateOfReservation" required="true"/>
+                    <form:input type="date" class="form-control" path="dateOfReservation" required="true"/>
 
                 </div>
                 <div class="form-group">
                     <form:label path="startingDate">Data wypożyczenia</form:label>
-                    <form:input id="datepicker" class="form-control" path="startingDate" required="true"/>
+                    <form:input type="date" class="form-control" path="startingDate" required="true"/>
                 </div>
                 <div class="form-group">
                     <form:label path="endDate">Data oddania</form:label>
-                    <form:input id="datepicker" class="form-control" path="endDate" required="true"/>
+                    <form:input type="date"  class="form-control" path="endDate" required="true"/>
 
                 </div>
                 <div class="form-group">
