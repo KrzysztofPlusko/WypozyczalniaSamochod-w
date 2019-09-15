@@ -24,14 +24,14 @@
             <c:if test="${msg.length() > 0}">
                 <div class="alert alert-success">${msg}</div>
             </c:if>
-            <h2>Lista Pracowników</h2>
+            <h2>Lista Pracownikow</h2>
             <table class="table table-striped">
                 <tr>
-                    <th>Imię</th>
+                    <th>Imie</th>
                     <th>Nazwisko</th>
                     <th>Stanowisko</th>
-                    <th>Odział</th>
-                    <th>Action</th>
+                    <th>Odzial</th>
+
                 </tr>
                 <c:forEach items="${employees}" var="employee">
                     <tr>
@@ -51,10 +51,7 @@
                                     <input hidden name="id" value="${employee.id}">
                                     <div class="float-left"><button alt="Edytuj pracownika" class="fas fa-edit"/></div>
                                 </form>
-                                <form action="/admin/employee/add" method="post">
-                                    <input hidden name="id" value="${employee.id}">
-                                    <div class="float-left"><button alt="Dodaj pojazd z modelu" class="far fa-plus-square"/></div>
-                                </form>
+
 
                             </div>
 
