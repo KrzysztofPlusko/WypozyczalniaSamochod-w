@@ -25,13 +25,13 @@
             <c:if test="${msg.length() > 0}">
                 <div class="alert alert-success">${msg}</div>
             </c:if>
-            <h2>Lista Pracownikow</h2>
+            <h2>Lista Pracowników</h2>
             <table class="table table-striped">
                 <tr>
-                    <th>Imie</th>
+                    <th>Imię</th>
                     <th>Nazwisko</th>
                     <th>Stanowisko</th>
-                    <th>Oddzial</th>
+                    <th>Oddział</th>
 
                 </tr>
                 <c:forEach items="${employees}" var="employee">
