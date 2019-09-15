@@ -14,10 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-import static com.sda.carsharing.mappers.EmployeeMapper.toEntity2;
-
-
-
 
 @Service
 public class EmployeeService {
@@ -37,7 +33,7 @@ public class EmployeeService {
 
     @Transactional
     public void addEmployee(EmployeeDto employeeDto) {
-        employeeRepository.save(EmployeeMapper.toEntity2(employeeDto));
+        employeeRepository.save(EmployeeMapper.toEntity(employeeDto));
     }
     public void deleteEmployeeById(Long id) {
         employeeRepository.deleteById(id);

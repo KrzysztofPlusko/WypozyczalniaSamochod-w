@@ -37,7 +37,7 @@ public class EmployeeController {
         return "admin/employee-form";
     }
 
-    //logika dodania nowego modelu auta do bazy
+    //logika dodania nowego pracownika do bazy
     @PostMapping
     public String addEmployee(@Valid @ModelAttribute("employeeDto") EmployeeDto employeeDto, Model model) {
 
