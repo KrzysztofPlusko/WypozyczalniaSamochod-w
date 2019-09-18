@@ -12,7 +12,7 @@ public class EmployeeMapper {
     employee.setFirstName(employeeDto.getFirstName());
     employee.setLastName(employeeDto.getLastName());
     employee.setRole(employeeDto.getRole());
-    employee.setBranches(employeeDto.getBranch());
+    employee.setBranches(employeeDto.getBranches());
     return employee;
     }
 }
