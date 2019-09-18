@@ -15,6 +15,7 @@ import java.util.List;
 @Table(name = "Branches")
 @Setter @Getter
 public class Branches extends BaseEntity{
+
     private String name;
     @OneToMany
     @Column(name = "cars")
