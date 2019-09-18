@@ -24,5 +24,5 @@ public class EmployeeDto {
     private Role role;
 
     //@NotBlank
-    private int branch;
+    private Branches branch;
 }
