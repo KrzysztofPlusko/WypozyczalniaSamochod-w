@@ -4,6 +4,7 @@ package com.sda.carsharing.web.controllers;
 import com.sda.carsharing.dto.EmployeeDto;
 import com.sda.carsharing.model.entities.Employee;
 
+import com.sda.carsharing.services.BranchesService;
 import com.sda.carsharing.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,11 +17,13 @@ import javax.validation.Valid;
 public class EmployeeController {
 
     private EmployeeService employeeService;
+    private BranchesService branchesService;
 
 
     @Autowired
-    public EmployeeController(EmployeeService employeeService) {
+    public EmployeeController(EmployeeService employeeService, BranchesService branchesService) {
         this.employeeService = employeeService;
+        this.branchesService = branchesService;
     }
 
     //wyświetl listę wszyskich pracowników
@@ -30,23 +33,28 @@ public class EmployeeController {
         return "admin/employee-list";
     }
 
-    //widok dla dodania nowego pracownika do bazy
-    @GetMapping(value = "/add")
-    public String addEmployeeViev(Model model) {
-        model.addAttribute("employeeDto", new EmployeeDto());
-        return "admin/employee-form";
-    }
+
+
 
     //logika dodania nowego pracownika do bazy
     @PostMapping
     public String addEmployee(@Valid @ModelAttribute("employeeDto") EmployeeDto employeeDto, Model model) {
-
+        employeeDto.setBranches(branchesService.findById(employeeDto.getBranchId()));
         this.employeeService.addEmployee(employeeDto);
 
         model.addAttribute("msg", "Pracownik dodany");
         model.addAttribute("employees", employeeService.findAll());
         return "admin/employee-list";
     }
+
+    @GetMapping(value = "/add")
+    public String addEmployeeView(Model model) {
+
+        model.addAttribute("employeeDto", new EmployeeDto());
+        model.addAttribute("branches", branchesService.findAll());
+        return "admin/employee-form";
+
+        }
 
     @PostMapping(value = "/del")
     public String delEmployee(@RequestParam(required = true) Long id, Model model) {
@@ -61,6 +69,7 @@ public class EmployeeController {
         model.addAttribute("employeeDto", employeeService.findById(id));
         return "admin/employee-form";
     }
+
 
 }
 

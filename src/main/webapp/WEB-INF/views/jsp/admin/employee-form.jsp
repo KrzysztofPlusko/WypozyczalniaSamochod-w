@@ -27,7 +27,10 @@
         </div>
         <div class="form-group">
             <form:label path="branches">Oddział</form:label>
-            <form:select path="branches" items="${branches}" />
+            <form:select  path="branchId">
+                <form:option value="NONE"> --SELECT--</form:option>
+                <form:options items="${branches}" itemValue="id" itemLabel="name"/>
+            </form:select>
         </div>
 
         <form:button class="btn btn-primary" type="submit" value="Submit">Wykonaj</form:button>

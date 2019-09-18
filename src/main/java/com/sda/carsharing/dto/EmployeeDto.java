@@ -12,6 +12,7 @@ import javax.validation.constraints.NotBlank;
 @Setter
 public class EmployeeDto {
     private Long id;
+    private Long branchId;
 
     @NotBlank
     private String firstName;
