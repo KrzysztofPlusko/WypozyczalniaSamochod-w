@@ -39,7 +39,7 @@
                         <td>${employee.firstName}</td>
                         <td>${employee.lastName}</td>
                         <td>${employee.role}</td>
-                        <td>${employee.branch}</td>
+                        <td>${employee.branches}</td>
 
                         <td>
                             <div id="action-buttons-group" class="position-relative">
