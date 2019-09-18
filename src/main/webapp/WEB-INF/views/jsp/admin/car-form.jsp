@@ -24,9 +24,9 @@
             <c:if test="${msg.length() > 0}">
                 <div class="alert alert-success">${msg}</div>
             </c:if>
-            <h2>Dodaj pojazd</h2>
+            <h2>Dodaj pojazd z modelu ID ${carModel}</h2>
             <form:form action="/admin/car" method="post" modelAttribute="carDto">
-                <input value="${carmodel}" name="carModelId" hidden />
+                <input value="${carModel}" name="carModelId" hidden />
                 <form:input hidden="true" path="status" value="AVAILABLE"></form:input>
                 <div class="form-group">
                     <form:label path="plateNumber">Numer rejestracyjny</form:label>
@@ -43,6 +43,11 @@
                 <div class="form-group">
                     <form:label path="color">Kolor</form:label>
                     <form:select path="color" items="${color}"></form:select>
+                </div>
+                <div calss="form-group">
+                    <form:label path="branche">Oddział</form:label>
+                    <form:select path="branchId" items="${branches}" itemLabel="${branches.name}"
+                                 itemValue="${branches.id}"></form:select>
                 </div>
                 <form:button class="btn btn-primary" type="submit" value="Submit">Wykonaj</form:button>
             </form:form>
