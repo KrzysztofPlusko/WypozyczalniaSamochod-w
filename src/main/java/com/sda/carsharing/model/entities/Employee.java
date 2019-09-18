@@ -30,7 +30,7 @@ public class Employee extends BaseEntity {
     private Role role; //popraw na Enum
 
     //@NotBlank
-    @Column(name = "branch_id", nullable = false)
+
     @ManyToOne
     private Branches branches;
 
