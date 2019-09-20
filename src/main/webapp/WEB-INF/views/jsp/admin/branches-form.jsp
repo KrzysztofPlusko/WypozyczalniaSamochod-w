@@ -26,7 +26,7 @@
             </c:if>
             <h2>Dodaj oddział</h2>
             <form:form action="/admin/branches" method="post" modelAttribute="brancheDto">
-
+                <form:input path="id" hidden="true" />
                 <div class="form-group">
                     <form:label path="name">Nazwa oddziału</form:label>
                     <form:input path="name" class="form-control" required="true"></form:input>
@@ -39,7 +39,6 @@
                     <form:label path="address">Adres</form:label>
                     <form:input path="address" class="form-control" required="true"></form:input>
                 </div>
-
                 <form:button class="btn btn-primary" type="submit" value="Submit">Wykonaj</form:button>
             </form:form>
         </div>

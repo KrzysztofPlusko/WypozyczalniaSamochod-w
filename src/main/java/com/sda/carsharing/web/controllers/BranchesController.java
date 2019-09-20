@@ -1,14 +1,12 @@
 package com.sda.carsharing.web.controllers;
 
 import com.sda.carsharing.dto.BranchesDto;
+import com.sda.carsharing.model.entities.Branches;
 import com.sda.carsharing.services.BranchesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -38,7 +36,24 @@ public class BranchesController {
     public String addBranches(Model model, @Valid @ModelAttribute("branchesDto") BranchesDto branchesDto) {
         this.branchesService.addBranches(branchesDto);
         model.addAttribute("branches", branchesService.findAll());
+        if(branchesDto.getId() == null){
         model.addAttribute("msg", "Oddział dodany");
+        }else{
+        model.addAttribute("msg", "Oddział zaktualizowany");
+        }
         return "admin/branches-list";
+    }
+
+    @PostMapping(value = "del")
+    public String delCarModel(@RequestParam(required = true) Long id, Model model) {
+        this.branchesService.deleteBranchesById(id);
+        model.addAttribute("msg", "Oddział usunięty");
+        model.addAttribute("branches", branchesService.findAll());
+        return "admin/branches-list";
+    }
+    @PostMapping(value = "edit")
+    public String editBranches(@RequestParam(required = true) Long id, Model model){
+        model.addAttribute("brancheDto", branchesService.findById(id));
+        return "admin/branches-form";
     }
 }

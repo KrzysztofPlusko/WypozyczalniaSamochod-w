@@ -26,18 +26,20 @@
             <h2>Lista aut</h2>
             <table class="table table-striped">
                 <tr>
-                    <th>Id modelu</th>
+                    <th>Model</th>
                     <th>Nr rej</th>
+                    <th>Nazwa Oddziału</th>
                     <th>Przebieg</th>
                     <th>Rok produkcji</th>
                     <th>Kolor</th>
                     <th>Status</th>
-                    <th>Action</th>
+                    <th>Opcje</th>
                 </tr>
                 <c:forEach items="${cars}" var="car">
                     <tr>
-                        <td>${car.carModel.id}</td>
+                        <td>${car.carModel.mark} ${car.carModel.model}</td>
                         <td>${car.plateNumber}</td>
+                        <td>${car.branches.name}</td>
                         <td>${car.mileage}</td>
                         <td>${car.productionDate}</td>
                         <td>${car.color}</td>

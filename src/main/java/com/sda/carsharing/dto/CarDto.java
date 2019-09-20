@@ -1,5 +1,6 @@
 package com.sda.carsharing.dto;
 
+import com.sda.carsharing.model.entities.Branches;
 import com.sda.carsharing.model.entities.CarModel;
 import com.sda.carsharing.model.enums.Color;
 import com.sda.carsharing.model.enums.Status;
@@ -10,11 +11,11 @@ import javax.validation.constraints.NotBlank;
 @Data
 public class CarDto {
 
+    private Long id;
+
     private CarModel carModel;
 
     private Long carModelId;
-
-    //private Branches branches;
 
     @NotBlank
     private String plateNumber;
@@ -27,5 +28,8 @@ public class CarDto {
 
     private Status status;
 
+    private Branches branches;
+
     private Long branchId;
+
 }

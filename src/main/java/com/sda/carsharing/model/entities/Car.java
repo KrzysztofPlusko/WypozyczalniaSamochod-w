@@ -17,7 +17,6 @@ import javax.validation.constraints.NotNull;
 @Getter @Setter
 public class Car extends BaseEntity {
 
-
     @NotNull
     @ManyToOne
     private CarModel carModel;
@@ -38,8 +37,8 @@ public class Car extends BaseEntity {
     @Column
     private Status status;
 
-    //@Column
-    //private Branches branches;
+    @ManyToOne
+    private Branches branches;
 
     @Override
     public String toString() {
