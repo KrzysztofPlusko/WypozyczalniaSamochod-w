@@ -33,7 +33,7 @@
                     <th>Paliwo</th>
                     <th>Klimatyzacja</th>
                     <th>Cena</th>
-                    <th>Action</th>
+                    <th>Opcje</th>
                 </tr>
                 <c:forEach items="${carmodels}" var="carmodel">
                     <tr>
