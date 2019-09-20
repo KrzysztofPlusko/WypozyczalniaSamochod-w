@@ -26,7 +26,8 @@
             </c:if>
             <h2>Dodaj pojazd z modelu ID ${carModel}</h2>
             <form:form action="/admin/car" method="post" modelAttribute="carDto">
-                <input value="${carModel}" name="carModelId" hidden />
+                <form:input path="carModelId" value="${carModel}" hidden="true" />
+                <form:input path="id" hidden="true" />
                 <form:input hidden="true" path="status" value="AVAILABLE"></form:input>
                 <div class="form-group">
                     <form:label path="plateNumber">Numer rejestracyjny</form:label>
@@ -45,9 +46,10 @@
                     <form:select path="color" items="${color}"></form:select>
                 </div>
                 <div calss="form-group">
-                    <form:label path="branche">Oddział</form:label>
-                    <form:select path="branchId" items="${branches}" itemLabel="${branches.name}"
-                                 itemValue="${branches.id}"></form:select>
+                    <form:label path="branchId">Oddział</form:label>
+                    <form:select  path="branchId">
+                        <form:options items="${branches}" itemValue="id" itemLabel="name"/>
+                    </form:select>
                 </div>
                 <form:button class="btn btn-primary" type="submit" value="Submit">Wykonaj</form:button>
             </form:form>
