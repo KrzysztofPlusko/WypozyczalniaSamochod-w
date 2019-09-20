@@ -30,6 +30,7 @@
                     <th>Nazwa oddziału</th>
                     <th>Misto</th>
                     <th>Adres</th>
+                    <th>Opcje</th>
                 </tr>
                 <c:forEach items="${branches}" var="branch">
                     <tr>
