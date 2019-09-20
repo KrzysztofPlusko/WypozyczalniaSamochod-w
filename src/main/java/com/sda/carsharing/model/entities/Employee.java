@@ -16,7 +16,7 @@ import javax.validation.constraints.NotBlank;
 @Getter
 @Setter
 @Entity
-@Table(name = "employess")
+@Table(name = "employees")
 
 public class Employee extends BaseEntity {
 
@@ -27,6 +27,14 @@ public class Employee extends BaseEntity {
     @NotBlank
     @Column(name = "last_name", nullable = false)
     private String lastName;
+
+    @NotBlank
+    @Column
+    private String login;
+
+    @NotBlank
+    @Column
+    private String password;
 
     //@NotBlank
     @Column(name = "role", nullable = false)
