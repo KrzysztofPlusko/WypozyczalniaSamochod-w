@@ -36,7 +36,11 @@ public class BranchesController {
     public String addBranche(Model model, @Valid @ModelAttribute("brancheDto") BranchesDto branchesDto) {
         this.branchesService.addBranches(branchesDto);
         model.addAttribute("branches", branchesService.findAll());
+        if(branchesDto.getId() == null){
         model.addAttribute("msg", "Oddział dodany");
+        }else{
+        model.addAttribute("msg", "Oddział zaktualizowany");
+        }
         return "admin/branches-list";
     }
 
