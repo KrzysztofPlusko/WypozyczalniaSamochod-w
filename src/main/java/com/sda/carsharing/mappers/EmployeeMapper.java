@@ -6,12 +6,13 @@ import com.sda.carsharing.dto.EmployeeDto;
 import com.sda.carsharing.model.entities.Employee;
 
 public class EmployeeMapper {
-    public static Employee toEntity2(EmployeeDto employeeDto){
+    public static Employee toEntity(EmployeeDto employeeDto){
     Employee employee = new Employee();
+    employee.setId(employeeDto.getId());
     employee.setFirstName(employeeDto.getFirstName());
     employee.setLastName(employeeDto.getLastName());
-    employee.setPosition(employeeDto.getPosition());
-    employee.setBranch(employeeDto.getBranch());
+    employee.setRole(employeeDto.getRole());
+    employee.setBranches(employeeDto.getBranches());
     return employee;
     }
 }

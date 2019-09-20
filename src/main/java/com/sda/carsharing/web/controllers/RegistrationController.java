@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequestMapping(value = "/register")
 public class RegistrationController {
@@ -30,8 +32,8 @@ public class RegistrationController {
         model.addAttribute("newClient", client);
         return "registration-form";
     }
-/*  @PostMapping
-// public String processRegistrationPage(String email, String password, String firstName, String lastName, String address)  {
+ @PostMapping
+ public String processRegistrationPage(String email, String password, String firstName, String lastName, String address)  {
 
     Client client = new Client();
 
@@ -42,11 +44,13 @@ public class RegistrationController {
     client.setLastName(lastName);
     client.setAddress(address);
 
-    List <Client> clients =
-
+    List<Client> clients = clientRepository.FindAllByUsername(email);
+    if(clients.isEmpty()) {
+        clientRepository.save(client);
+}
+        return "redirect:/index.html";
     }
 
 
-    */
 
 }

@@ -43,6 +43,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/").permitAll()   // Dodajemy stronę główną, aby mógł wejść na nią każdy
                 .antMatchers("/webjars/**").permitAll()
+                .antMatchers("/css/**", "/js/**", "/images/**").permitAll()
+                .antMatchers("/resources/**").permitAll()
                 .antMatchers("/admin/**").permitAll()
                 .antMatchers("/register").anonymous()
                 .antMatchers("/login").anonymous()

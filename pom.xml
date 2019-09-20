@@ -11,6 +11,7 @@
     <groupId>com.sda.wypozyczalnia</groupId>
     <artifactId>wypozyczalniaaut</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
     <name>wypozyczalniaaut</name>
     <description>Demo project for Spring Boot</description>
 
@@ -28,9 +29,10 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!-- Zależności do włączenia bazy danych MySQL -->
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
 

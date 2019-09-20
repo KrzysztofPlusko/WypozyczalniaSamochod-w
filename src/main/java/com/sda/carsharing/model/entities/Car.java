@@ -5,16 +5,17 @@ import com.sda.carsharing.model.enums.Status;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "cars")
 @Getter @Setter
 public class Car extends BaseEntity {
-
 
     @NotNull
     @ManyToOne
@@ -35,6 +36,9 @@ public class Car extends BaseEntity {
 
     @Column
     private Status status;
+
+    @ManyToOne
+    private Branches branches;
 
     @Override
     public String toString() {
