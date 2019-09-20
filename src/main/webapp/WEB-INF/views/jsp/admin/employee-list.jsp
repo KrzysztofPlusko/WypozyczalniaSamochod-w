@@ -32,7 +32,7 @@
                     <th>Nazwisko</th>
                     <th>Stanowisko</th>
                     <th>Oddział</th>
-
+                    <th>Opcje</th>
                 </tr>
                 <c:forEach items="${employees}" var="employee">
                     <tr>
@@ -40,7 +40,7 @@
                         <td>${employee.lastName}</td>
                         <td>${employee.role}</td>
                         <td>${employee.branch}</td>
-
+                        <td>{placeholder}</td>
                         <td>
                             <div id="action-buttons-group" class="position-relative">
                                 <form id="form-del" action="/admin/employee/del" method="post"

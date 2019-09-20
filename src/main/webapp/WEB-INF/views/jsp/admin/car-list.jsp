@@ -33,7 +33,7 @@
                     <th>Rok produkcji</th>
                     <th>Kolor</th>
                     <th>Status</th>
-                    <th>Action</th>
+                    <th>Opcje</th>
                 </tr>
                 <c:forEach items="${cars}" var="car">
                     <tr>
