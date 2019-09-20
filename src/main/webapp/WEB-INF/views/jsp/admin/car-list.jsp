@@ -27,6 +27,7 @@
             <table class="table table-striped">
                 <tr>
                     <th>Id modelu</th>
+                    <th>Nazwa Oddziału</th>
                     <th>Nr rej</th>
                     <th>Przebieg</th>
                     <th>Rok produkcji</th>
@@ -37,6 +38,7 @@
                 <c:forEach items="${cars}" var="car">
                     <tr>
                         <td>${car.carModel.id}</td>
+                        <td>${car.branches.name}</td>
                         <td>${car.plateNumber}</td>
                         <td>${car.mileage}</td>
                         <td>${car.productionDate}</td>

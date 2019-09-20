@@ -23,7 +23,7 @@ public class ReservationController {
     }
 
     //wyswietl listę wszystkich rezerwacji
-    @GetMapping
+    @GetMapping(value = "/admin/reservation")
     public String findAll(Model model) {
         model.addAttribute("reservation", reservationService.findAll());
         return "admin/reservation-list";
