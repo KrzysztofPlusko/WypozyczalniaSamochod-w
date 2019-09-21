@@ -26,8 +26,11 @@
             <form:select path="role" items="${role}" />
         </div>
         <div class="form-group">
-            <form:label path="branch">Oddział</form:label>
-            <form:select path="branch" items="${branch}" />
+            <form:label path="branches">Oddział</form:label>
+            <form:select  path="branchId">
+                <form:option value="NONE"> --SELECT--</form:option>
+                <form:options items="${branches}" itemValue="id" itemLabel="name"/>
+            </form:select>
         </div>
 
         <form:button class="btn btn-primary" type="submit" value="Submit">Wykonaj</form:button>

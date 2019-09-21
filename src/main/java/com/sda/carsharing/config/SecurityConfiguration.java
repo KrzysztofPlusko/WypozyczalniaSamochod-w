@@ -12,55 +12,48 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import javax.sql.DataSource;
 
 @Configuration
+/*
+    Nie dodajemy adnotacji @EnableWebSecurity, bo to zostało już zrobione
+    przez Spring Boot
+ */
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    private DataSource dataSource;
+    /*
+        Wstrzykiwane jest podstawowe źródło danych, skonfigurowane w pliku application.properties
+     */
+    private final DataSource dataSource;
 
-    @Autowired
     public SecurityConfiguration(DataSource dataSource) {
         this.dataSource = dataSource;
     }
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-                .inMemoryAuthentication()
-                .withUser("user").password("{noop}password").roles("USER");
-    }
-
-    /*   @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.jdbcAuthentication()
-                .dataSource(dataSource)
-                .passwordEncoder(passwordEncoder())
-                .usersByUsernameQuery("SELECT email, password, true FROM clients WHERE email = ?")
-                .authoritiesByUsernameQuery("SELECT lastName, role FROM employees WHERE 'lastName' = ?");
-    }*/
-
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()
-                .antMatchers("/").permitAll()   // Dodajemy stronę główną, aby mógł wejść na nią każdy
-                .antMatchers("/webjars/**").permitAll()
-                .antMatchers("/css/**", "/js/**", "/images/**").permitAll()
-                .antMatchers("/resources/**").permitAll()
-                .antMatchers("/admin/**").permitAll()
-                .antMatchers("/register").anonymous()
-                .antMatchers("/login").anonymous()
-                .antMatchers("/logout").authenticated()
-                .anyRequest().authenticated()
-                .and()
-                .csrf().disable()     // można teżdodać do każdego pliku .jsp
-                .formLogin()
-                .loginPage("/login")
-                .defaultSuccessUrl("/") // Usuwamy plik `index.html` i dajemy ścieżkę do kontrolera strony głównej
-                .and()
-                .logout()
-                .logoutSuccessUrl("/");  // j.w.
-   }
     @Bean
     public PasswordEncoder passwordEncoder() {
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
+    }
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.inMemoryAuthentication()
+                .withUser("admin").password("{noop}admin").roles("ADMIN");
+        //        auth.jdbcAuthentication()
+//                .dataSource(dataSource)
+//                .passwordEncoder(passwordEncoder())
+//                .usersByUsernameQuery("SELECT login, password FROM employees WHERE login = ?")
+//                // Role nie są obsługiwane więc mamy "fakowe" zapytanie, które dla każdego użytkownika
+//                // zwraca ustaloną z góry rolę 'ROLE_USER'
+//                .authoritiesByUsernameQuery("SELECT login, 'ADMIN' FROM employees WHERE login = ?");
+    }
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests()
+                .anyRequest().authenticated()
+                .and()
+                .formLogin()
+                .and()
+                .logout()
+                .and()
+                .httpBasic();
     }
 }

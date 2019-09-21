@@ -12,6 +12,7 @@ import javax.validation.constraints.NotBlank;
 @Setter
 public class EmployeeDto {
     private Long id;
+    private Long branchId;
 
     @NotBlank
     private String firstName;
@@ -19,6 +20,11 @@ public class EmployeeDto {
     @NotBlank
     private String lastName;
 
+    @NotBlank
+    private String login;
+
+    @NotBlank
+    private String password;
 
     //@NotBlank
     private Role role;

@@ -28,12 +28,12 @@ public class BranchesController {
 
     @GetMapping(value = "add")
     public String addBranchesView(Model model) {
-        model.addAttribute("brancheDto", new BranchesDto());
+        model.addAttribute("branchesDto", new BranchesDto());
         return "admin/branches-form";
     }
 
     @PostMapping
-    public String addBranche(Model model, @Valid @ModelAttribute("brancheDto") BranchesDto branchesDto) {
+    public String addBranches(Model model, @Valid @ModelAttribute("branchesDto") BranchesDto branchesDto) {
         this.branchesService.addBranches(branchesDto);
         model.addAttribute("branches", branchesService.findAll());
         if(branchesDto.getId() == null){
