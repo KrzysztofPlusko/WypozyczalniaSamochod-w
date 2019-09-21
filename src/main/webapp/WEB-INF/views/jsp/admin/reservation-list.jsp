@@ -1,17 +1,33 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- header z includami -->
     <%@ include file="../header.jsp" %>
 </head>
 <body>
-<div class="container">
-    <c:if test="${msg.length() > 0}">
-        <div class="alert alert-success">${msg}</div>
-    </c:if>
-    <table class="table table-striped">
-        <tr>
+
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <%@ include file="sidebar.jsp" %>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <!-- Topbar -->
+        <%@ include file="topbar.jsp" %>
+
+
+        <div class="container-fluid">
+            <c:if test="${msg.length() > 0}">
+                <div class="alert alert-success">${msg}</div>
+            </c:if>
+            <h2>Lista Rezerwacji</h2>
+            <table class="table table-striped">
+                <tr>
             <th>Klient</th>
             <th>Data rezerwacji</th>
             <th>Data wypożyczenia</th>

@@ -14,7 +14,15 @@
 
         <li class ="list-group-item"><a class="nav-link" href="/admin/car">Pojazdy</a></li>
 
-        <li class ="list-group-item"><a class="nav-link" href="/admin/reservation">Rezerwacje</a></li>
+        <li class="list-group-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownreRervation" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Rezerwacje
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/admin/reservation">Lista</a>
+                <a class="dropdown-item" href="/admin/reservation/add">Dodaj</a>
+            </div>
+        </li>
 
         <li class="list-group-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEmployee" role="button"
