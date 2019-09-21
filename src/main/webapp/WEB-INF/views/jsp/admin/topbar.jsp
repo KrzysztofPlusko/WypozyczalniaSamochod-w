@@ -12,7 +12,7 @@
                 <a class="nav-link" href="#">Witaj {Placeholder}!</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Wyloguj</a>
+                <a class="nav-link" href="<c:url value="/logout" />">Wyloguj</a>
             </li>
         </ul>
     </div>
