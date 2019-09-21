@@ -27,7 +27,7 @@
             </c:if>
 
         <h1>Dodaj pracownika</h1>
-    </div>
+
     <form:form method="POST"
                action="/admin/employee" modelAttribute="employeeDto">
         <form:input path="id" hidden="true" />
