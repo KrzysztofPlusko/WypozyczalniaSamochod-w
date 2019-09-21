@@ -8,6 +8,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -18,36 +19,35 @@ import java.time.LocalDate;
 public class Reservation extends BaseEntity{
 
     @Column(name = "date_of_reservation")
-    @NotBlank
+    @NotNull
     private LocalDate dateOfReservation;
 
     @Column(name = "starting_date")
-    @NotBlank
+    @NotNull
     private LocalDate startingDate;
 
     @Column(name = "end_date")
-    @NotBlank
+    @NotNull
     private LocalDate endDate;
 
     @Column(name = "reservation_branch")
-    @NotBlank
+    @NotNull
     private Long reservationBranch;
 
     @Column(name = "return_branch")
-    @NotBlank
+    @NotNull
     private Long returnBranch;
 
-    @NotBlank
     private BigDecimal price;
 
     @ManyToOne
     @JoinColumn(name = "car_model", nullable = false)
-    @NotBlank
+    @NotNull
     private CarModel carModel;
 
     @ManyToOne
     @JoinColumn(name = "client", nullable = false)
-    @NotBlank
+    @NotNull
     private Client client;
 
     @Override

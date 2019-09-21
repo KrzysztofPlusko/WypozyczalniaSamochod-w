@@ -48,16 +48,22 @@
                 </div>
                 <div class="form-group">
                     <form:label path="reservationBranch">Oddział wypożyczenia</form:label>
-                    <form:select path="reservationBranch" items="${reservationBranch}" />
+                    <form:select path="reservationBranch" >
+                        <form:options items="${branches}" itemValue="id" itemLabel="name"/>
+                    </form:select>
                 </div>
                 <div class="form-group">
                     <form:label path="returnBranch">Oddział oddania</form:label>
-                    <form:select path="returnBranch" items="${endBranch}" />
+                    <form:select path="returnBranch" >
+                        <form:options items="${branches}" itemValue="id" itemLabel="name"/>
+                    </form:select>
                 </div>
 
                 <div class="form-group">
                     <form:label path="carModel">Model auta</form:label>
-                    <form:select path="carModel" items="${carModel}"/>
+                    <form:select path="carModel.id" >
+                        <form:options items="${carModel}" itemValue="id" itemLabel="id"/>
+                    </form:select>
                 </div>
 
 
