@@ -42,7 +42,7 @@ public class EmployeeController {
         employeeDto.setBranches(branchesService.findById(employeeDto.getBranchId()));
         this.employeeService.addEmployee(employeeDto);
 
-        model.addAttribute("msg", "Pracownik dodany");
+        if(employeeDto.getId()== null){model.addAttribute("msg", "Pracownik dodany");}else{model.addAttribute("msg", "Pracownik został edytowany");}
         model.addAttribute("employees", employeeService.findAll());
         return "admin/employee-list";
     }
