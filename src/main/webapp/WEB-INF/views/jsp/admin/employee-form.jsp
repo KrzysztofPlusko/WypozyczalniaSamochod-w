@@ -6,16 +6,24 @@
     <%@ include file="../header.jsp" %>
 </head>
 <body>
-<div class="container">
-    <div class="page-header">
+<%--<div class="container">--%>
+<%--    <div class="page-header">--%>
 
-        <!-- Sidebar -->
-        <%@ include file="sidebar.jsp" %>
+<div class="d-flex" id="wrapper">
 
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <!-- Topbar -->
-            <%@ include file="topbar.jsp" %>
+    <!-- Sidebar -->
+    <%@ include file="sidebar.jsp" %>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <!-- Topbar -->
+        <%@ include file="topbar.jsp" %>
+
+
+        <div class="container-fluid">
+            <c:if test="${msg.length() > 0}">
+                <div class="alert alert-success">${msg}</div>
+            </c:if>
 
         <h1>Dodaj pracownika</h1>
     </div>
@@ -23,15 +31,15 @@
                action="/admin/employee" modelAttribute="employeeDto">
         <form:input path="id" hidden="true" />
         <div class="form-group">
-            <form:label path="firstName">Imię</form:label>
+            <form:label path="firstName"> Imię</form:label>
             <form:input class="form-control" path="firstName" required="true"/>
         </div>
         <div class="form-group">
-            <form:label path="lastName">Nazwisko</form:label>
+            <form:label path="lastName"> Nazwisko</form:label>
             <form:input class="form-control" path="lastName" required="true"/>
         </div>
         <div class="form-group">
-            <form:label path="role">Stanowisko</form:label>
+            <form:label path="role"> Stanowisko</form:label>
             <form:select path="role" items="${role}" />
         </div>
 
@@ -45,7 +53,7 @@
 
 
        <div class="form-group">
-           <form:label path="branches">Oddział</form:label>
+           <form:label path="branches"> Oddział</form:label>
           <form:select path="branches" items="${branches}" />
        </div>
 
