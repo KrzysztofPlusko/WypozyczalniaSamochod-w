@@ -21,6 +21,9 @@ import javax.validation.constraints.NotBlank;
 public class Employee extends BaseEntity {
 
     @NotBlank
+    @Column(name = "branch_id", nullable = false, updatable = true)
+    private Long branchId;
+    @NotBlank
     @Column(name = "first_name",  nullable = false)
     private String firstName;
 
