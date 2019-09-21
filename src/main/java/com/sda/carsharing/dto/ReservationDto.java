@@ -16,34 +16,36 @@ import java.time.LocalDate;
 @Data
 public class ReservationDto {
 
-    @NotBlank
+
     private Long id;
 
-    @NotBlank
+
     private LocalDate dateOfReservation;
 
-    @NotBlank
+
     private LocalDate startingDate;
 
-    @NotBlank
+
     private LocalDate endDate;
 
-    @NotBlank
+
     private Long reservationBranch;
 
-    @NotBlank
+
     private Long returnBranch;
 
-    @NotBlank
+
     private BigDecimal price;
 
     
 //<<<<<<< reservation
-  @NotBlank  
+
   private Client client;
 
-    @NotBlank
-    private CarModel carModel;
+
+    private Long carModel;
+
+
 //=======
     //private Long clientId;
 
