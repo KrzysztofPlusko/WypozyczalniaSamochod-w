@@ -11,6 +11,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.sql.DataSource;
 
+import static org.hibernate.criterion.Restrictions.and;
+
 @Configuration
 /*
     Nie dodajemy adnotacji @EnableWebSecurity, bo to zostało już zrobione
@@ -35,7 +37,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("admin").password("{noop}admin").roles("ADMIN");
+                .withUser("admin").password("{noop}admin").roles("ADMIN")
+                .and()
+                .withUser("manager").password("{noop}manager").roles("MANAGER")
+                .and()
+                .withUser("employee").password("{noop}employee").roles("EMPLOYEE");
+
+
         //        auth.jdbcAuthentication()
 //                .dataSource(dataSource)
 //                .passwordEncoder(passwordEncoder())
