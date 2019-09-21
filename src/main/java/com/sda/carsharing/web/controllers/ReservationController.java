@@ -23,7 +23,7 @@ public class ReservationController {
     }
 
     //wyswietl listę wszystkich rezerwacji
-    @GetMapping(value = "/admin/reservation")
+    @GetMapping
     public String findAll(Model model) {
         model.addAttribute("reservation", reservationService.findAll());
         return "admin/reservation-list";
@@ -41,8 +41,13 @@ public class ReservationController {
     public String addReservation(Model model, @Valid @ModelAttribute("reservationDto") ReservationDto reservationDto) {
         this.reservationService.addReservation(reservationDto);
         model.addAttribute("reservation", reservationService.findAll());
-        model.addAttribute("msg", "Wypożycz auto");
+        if(reservationDto.getId() == null){
+            model.addAttribute("msg", "Rezerwacja dodana");
+        }else{
+            model.addAttribute("msg", "Rezerwacja zaktualizowana");
+        }
         return "admin/reservation-list";
+
 
     }
 
