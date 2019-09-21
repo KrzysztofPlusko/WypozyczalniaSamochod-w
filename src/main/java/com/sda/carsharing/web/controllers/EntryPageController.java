@@ -11,6 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class EntryPageController {
     @GetMapping
     public String prepareEntryPage() {
-        return "login-page";
+        return "admin/reservation/list";
     }
 }

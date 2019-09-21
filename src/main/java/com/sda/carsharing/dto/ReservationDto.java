@@ -1,6 +1,7 @@
 package com.sda.carsharing.dto;
 
 //<<<<<<< reservation
+
 import com.sda.carsharing.model.entities.Car;
 
 import com.sda.carsharing.model.entities.CarModel;
@@ -8,6 +9,7 @@ import com.sda.carsharing.model.entities.Client;
 //=======
 //>>>>>>> master
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotBlank;
 import java.math.BigDecimal;
@@ -16,39 +18,45 @@ import java.time.LocalDate;
 @Data
 public class ReservationDto {
 
-    @NotBlank
+
     private Long id;
 
-    @NotBlank
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateOfReservation;
 
-    @NotBlank
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate startingDate;
 
-    @NotBlank
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate endDate;
 
-    @NotBlank
+
     private Long reservationBranch;
 
-    @NotBlank
+
     private Long returnBranch;
 
-    @NotBlank
+
     private BigDecimal price;
 
-    
-//<<<<<<< reservation
-  @NotBlank  
-  private Client client;
 
-    @NotBlank
+//<<<<<<< reservation
+
+    private Client client;
+
+
     private CarModel carModel;
+    private String carModelId;
+
+
 //=======
     //private Long clientId;
 
-   // @NotBlank
-   // private Long carId;
+    // @NotBlank
+    // private Long carId;
 //>>>>>>> master
 
 
