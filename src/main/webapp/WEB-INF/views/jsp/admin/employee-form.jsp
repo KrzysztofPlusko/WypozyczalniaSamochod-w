@@ -25,13 +25,20 @@
             <form:label path="role">Stanowisko</form:label>
             <form:select path="role" items="${role}" />
         </div>
-        <div class="form-group">
-            <form:label path="branches">Oddział</form:label>
-            <form:select  path="branchId">
-                <form:option value="NONE"> --SELECT--</form:option>
-                <form:options items="${branches}" itemValue="id" itemLabel="name"/>
-            </form:select>
-        </div>
+
+<%--        <form:form action="/admin/employee" method="post" modelAttribute="branchesDto">--%>
+<%--            <input value="${branches}" name="branchesId" hidden />--%>
+<%--            <form:input hidden="true" path="status" value="AVAILABLE"></form:input>--%>
+<%--&lt;%&ndash;            <div class="form-group">&ndash;%&gt;--%>
+<%--&lt;%&ndash;                <form:label path="plateNumber"></form:label>&ndash;%&gt;--%>
+<%--&lt;%&ndash;                <form:input path="plateNumber" class="form-control" required="true"></form:input>&ndash;%&gt;--%>
+<%--&lt;%&ndash;            </div>&ndash;%&gt;--%>
+
+
+       <div class="form-group">
+           <form:label path="branches">Oddział</form:label>
+          <form:select path="branches" items="${branches}" />
+       </div>
 
         <form:button class="btn btn-primary" type="submit" value="Submit">Wykonaj</form:button>
     </form:form>
