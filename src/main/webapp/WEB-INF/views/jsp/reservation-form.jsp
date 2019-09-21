@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="form-group">
-                    <form:label path="carModel"></form:label>
+                    <form:label path="carModel">Model auta</form:label>
                     <form:select path="carModel" items="${carModel}"/>
                 </div>
 
