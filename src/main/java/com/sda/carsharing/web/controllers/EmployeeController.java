@@ -67,6 +67,7 @@ public class EmployeeController {
     @PostMapping(value = "/edit")
     public String editEmployee(@RequestParam(required = true) Long id, Model model){
         model.addAttribute("employeeDto", employeeService.findById(id));
+        model.addAttribute("branches", branchesService.findAll());
         return "admin/employee-form";
     }
 

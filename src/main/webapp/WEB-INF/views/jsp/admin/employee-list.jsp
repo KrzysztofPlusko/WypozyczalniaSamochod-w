@@ -39,8 +39,8 @@
                         <td>${employee.firstName}</td>
                         <td>${employee.lastName}</td>
                         <td>${employee.role}</td>
-                        <td>${employee.branchId}</td>
-                        <td>{placeholder}</td>
+                        <td>${employee.branches.name}</td>
+
                         <td>
                             <div id="action-buttons-group" class="position-relative">
                                 <form id="form-del" action="/admin/employee/del" method="post"

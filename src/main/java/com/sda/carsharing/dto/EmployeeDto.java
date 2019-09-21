@@ -23,7 +23,7 @@ public class EmployeeDto {
     @NotBlank
     private String login;
 
-    @NotBlank
+
     private String password;
 
     //@NotBlank
@@ -31,4 +31,5 @@ public class EmployeeDto {
 
     //@NotBlank
     private Branches branches;
+
 }
