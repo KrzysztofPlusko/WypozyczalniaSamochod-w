@@ -8,6 +8,15 @@
 <body>
 <div class="container">
     <div class="page-header">
+
+        <!-- Sidebar -->
+        <%@ include file="sidebar.jsp" %>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <!-- Topbar -->
+            <%@ include file="topbar.jsp" %>
+
         <h1>Dodaj pracownika</h1>
     </div>
     <form:form method="POST"
