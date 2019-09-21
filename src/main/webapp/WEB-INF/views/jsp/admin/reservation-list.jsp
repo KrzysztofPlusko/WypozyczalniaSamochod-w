@@ -19,7 +19,7 @@
             <th>Oddział wypożyczenia</th>
             <th>Oddział oddania</th>
             <th>carModel</th>
-            <th>Action</th>
+            <th>Opcje</th>
         </tr>
         <c:forEach items="${reservation}" var="reservation">
             <tr>
@@ -30,7 +30,6 @@
                 <td>${reservation.reservationBranch}</td>
                 <td>${reservation.returnBranch}</td>
                 <td>${reservation.carModel}</td>
-
 
                 <td>
                     <div id="action-buttons-group" class="position-relative">

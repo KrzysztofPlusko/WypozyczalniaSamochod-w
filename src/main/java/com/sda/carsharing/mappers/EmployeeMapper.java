@@ -11,6 +11,7 @@ public class EmployeeMapper {
     employee.setId(employeeDto.getId());
     employee.setFirstName(employeeDto.getFirstName());
     employee.setLastName(employeeDto.getLastName());
+    employee.setLogin(employeeDto.getLogin());
     employee.setRole(employeeDto.getRole());
     employee.setBranches(employeeDto.getBranches());
     return employee;

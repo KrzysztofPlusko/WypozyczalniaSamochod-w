@@ -30,12 +30,13 @@ public class BranchesService {
         branchesRepository.save(BranchesMapper.toEntity(branchesDto));
     }
 
-    public void deleteReservationById(Long id) {
+    public void deleteBranchesById(Long id) {
         branchesRepository.deleteById(id);
     }
 
     public Branches findById(Long id) {
         return branchesRepository.findById(id).get();
     }
+
 
 }
