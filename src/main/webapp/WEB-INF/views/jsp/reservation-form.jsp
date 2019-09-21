@@ -61,7 +61,7 @@
 
                 <div class="form-group">
                     <form:label path="carModel">Model auta</form:label>
-                    <form:select path="carModel" >
+                    <form:select path="carModel.id" >
                         <form:options items="${carModel}" itemValue="id" itemLabel="id"/>
                     </form:select>
                 </div>

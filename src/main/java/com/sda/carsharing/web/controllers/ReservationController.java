@@ -47,7 +47,7 @@ public class ReservationController {
 
     @PostMapping
     public String addReservation(Model model, @Valid @ModelAttribute("reservationDto") ReservationDto reservationDto) {
-        reservationDto.setCarModel(carModelService.findById(reservationDto.getCarModel()));
+        reservationDto.setCarModel(carModelService.findById(reservationDto.getCarModel().getId()));
 
         this.reservationService.addReservation(reservationDto);
         model.addAttribute("reservation", reservationService.findAll());
