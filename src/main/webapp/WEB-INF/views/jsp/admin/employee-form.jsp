@@ -38,6 +38,16 @@
             <form:label path="lastName"> Nazwisko</form:label>
             <form:input class="form-control" path="lastName" required="true"/>
         </div>
+
+        <div class="form-group">
+        <form:label path="login"> Login</form:label>
+        <form:input class="form-control" path="login" required="true"/>
+    </div>
+
+        <div class="form-group">
+            <form:label path="password"> Hasło </form:label>
+            <form:input type="password" class="form-control" path="password" required="true"/>
+        </div>
         <div class="form-group">
             <form:label path="role"> Stanowisko</form:label>
             <form:select path="role" items="${role}" />
@@ -53,8 +63,8 @@
 
 
        <div class="form-group">
-           <form:label path="branches"> Oddział</form:label>
-           <form:select path="branches"  >
+           <form:label path="branchId"> Oddział</form:label>
+           <form:select path="branchId"  >
                <form:options items="${branches}" itemValue="id" itemLabel="name"/>
            </form:select>
        </div>

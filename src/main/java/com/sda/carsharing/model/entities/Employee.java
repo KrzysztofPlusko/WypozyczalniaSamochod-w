@@ -20,7 +20,11 @@ import javax.validation.constraints.NotBlank;
 
 public class Employee extends BaseEntity {
 
+@Column (name = "branch_id ",  nullable = false)
+
+    private Long branchId;
     @NotBlank
+
     @Column(name = "first_name",  nullable = false)
     private String firstName;
 
@@ -32,17 +36,21 @@ public class Employee extends BaseEntity {
     @Column
     private String login;
 
-    @NotBlank
+
     @Column
     private String password;
 
     //@NotBlank
     @Column(name = "role", nullable = false)
-    private Role role; //popraw na Enum
+    private Role role; //poprawione na Enum
 
     //@NotBlank
 
     @ManyToOne
     private Branches branches;
+
+
+
+
 
 }
