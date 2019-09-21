@@ -30,6 +30,10 @@ public class ClientService {
         return this.clientRepository.FindAllByUsername(email);
 
    }
+
+    public Client findByEmail(String email) {
+        return clientRepository.findByEmail(email);
     }
+}
 
 

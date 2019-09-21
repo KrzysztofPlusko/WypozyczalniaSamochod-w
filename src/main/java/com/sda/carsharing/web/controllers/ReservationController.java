@@ -3,6 +3,8 @@ package com.sda.carsharing.web.controllers;
 
 import com.sda.carsharing.dto.BranchesDto;
 import com.sda.carsharing.dto.ReservationDto;
+import com.sda.carsharing.services.BranchesService;
+import com.sda.carsharing.services.CarModelService;
 import com.sda.carsharing.services.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,11 +17,15 @@ import javax.validation.Valid;
 @RequestMapping("/admin/reservation")
 public class ReservationController {
     private ReservationService reservationService;
-
+    private BranchesService branchesService;
+    private CarModelService carModelService;
     @Autowired
 
-    public ReservationController(ReservationService reservationService) {
+    public ReservationController(ReservationService reservationService, BranchesService branchesService, CarModelService carModelService) {
         this.reservationService = reservationService;
+        this.branchesService = branchesService;
+        this.carModelService = carModelService;
+
     }
 
     //wyswietl listę wszystkich rezerwacji
@@ -33,12 +39,16 @@ public class ReservationController {
     @GetMapping("/add")
     public String addmodelView(Model model) {
         model.addAttribute("reservationDto", new ReservationDto());
+        model.addAttribute("branches", branchesService.findAll());
+        model.addAttribute("carModel",carModelService.findAll());
         return "reservation-form";
     }
 
 
     @PostMapping
     public String addReservation(Model model, @Valid @ModelAttribute("reservationDto") ReservationDto reservationDto) {
+        reservationDto.setCarModel(carModelService.findById(reservationDto.getCarModel().getId()));
+
         this.reservationService.addReservation(reservationDto);
         model.addAttribute("reservation", reservationService.findAll());
         if(reservationDto.getId() == null){
